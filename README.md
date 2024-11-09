@@ -12,7 +12,11 @@
 
 
 ## 💻 Acessando a Plataforma
-Você pode acessar o projeto [clicando aqui.](www.google.com)
+Você pode acessar o projeto [clicando aqui.](https://hackthon102-sandbox.mxapps.io/login.html?profile=Responsive)
+User: Meerkat
+Password: Papel123
+
+
 
 
 

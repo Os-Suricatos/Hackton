@@ -4,7 +4,7 @@
 
 ![](img/discoveryreadme.png)
 <p align="center">
-  <img src="https://github.com/CaioKenedy/Caio-Discovery/blob/main/img/mobilediscoveryf.png" alt="Mobile image"/>
+  <img src="https://github.com/CaioKenedy/ReadmeUnida/blob/main/img/image.jpg" alt="Mobile image"/>
 </p>
 
 > Nossa plataforma de avaliação permite que professores personalizem provas e quizzes, adaptando o formato das perguntas para atender às diferentes necessidades dos alunos, garantindo um ambiente de aprendizado acessível e inclusivo
@@ -133,4 +133,4 @@ Quais métricas podem ser utilizadas para mensurar os benefícios?
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
 
-[⬆ Voltar ao topo](#Unida)<br>
+[⬆ Voltar ao topo](#cao-discovery)<br>

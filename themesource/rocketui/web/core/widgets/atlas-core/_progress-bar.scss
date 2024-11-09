@@ -1,0 +1,128 @@
+// Bootstrap
+//no progress-bar
+
+// Atlas
+// @import '../../../../../atlas_core/web/core/widgets/progress-bar';
+// @import '../../../../../atlas_core/web/core/helpers/progress-bar';
+
+// @include progress-bar();
+// @include progress-bar-helpers();
+
+//Customizations
+
+/* --------- Progress Bar Overrides --------- */
+
+.widget-progress-bar {
+    --progress-bar-bg-size: 40px;
+
+    width: 100%;
+
+    .progress {
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+
+        border-radius: var(--#{$prefix}border-radius);
+        background-color: var(--#{$prefix}body-bg);
+    }
+
+    .progress-bar {
+        align-self: flex-start;
+        width: 0;
+        height: 100%;
+        transition: width 0.6s ease;
+        text-align: center;
+
+        color: var(--#{$prefix}white);
+        border-radius: var(--#{$prefix}border-radius);
+        font-weight: $font-weight-semibold;
+    }
+
+    &.progress-bar-medium .progress,
+    .progress-bar-medium .progress-bar {
+        height: var(--space-base);
+        line-height: var(--space-base);
+        font-size: var(--font-size-s);
+    }
+
+    &.progress-bar-small .progress,
+    .progress-bar-small .progress-bar {
+        height: var(--space-s);
+        line-height: var(--space-s);
+        font-size: 0px;
+    }
+
+    &.progress-bar-small .progress-bar>* {
+        // Specifically to hide custom labels.
+        display: none;
+    }
+
+    &.progress-bar-large .progress,
+    .progress-bar-large .progress-bar {
+        height: var(--space-m);
+        line-height: var(--space-m);
+        font-size: var(--font-size-s);
+    }
+
+    &.progress-striped .progress-bar,
+    .progress-bar-striped {
+        background-image: linear-gradient(45deg,
+                rgba(255, 255, 255, 0.15) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.15) 50%,
+                rgba(255, 255, 255, 0.15) 75%,
+                transparent 75%,
+                transparent);
+        background-size: var(--progress-bar-bg-size) var(--progress-bar-bg-size);
+    }
+
+    &.active .progress-bar,
+    .progress.active .progress-bar,
+    .progress-bar.active {
+        animation: progress-bar-stripes 2s linear infinite;
+    }
+
+    @keyframes progress-bar-stripes {
+        from {
+            background-position: var(--progress-bar-bg-size) 0;
+        }
+
+        to {
+            background-position: 0 0;
+        }
+    }
+
+    &.progress-bar-primary .progress-bar {
+        background-color: var(--#{$prefix}primary);
+    }
+
+    &.progress-bar-success .progress-bar {
+        background-color: var(--#{$prefix}success);
+    }
+
+    &.progress-bar-warning .progress-bar {
+        background-color: var(--#{$prefix}warning);
+    }
+
+    &.progress-bar-danger .progress-bar {
+        background-color: var(--#{$prefix}danger);
+    }
+
+    &-alert.widget-progress-bar-text-contrast .progress-bar {
+        color: var(--#{$prefix}danger-darker);
+    }
+
+    &-text-contrast .progress-bar {
+        color: var(--#{$prefix}body-color);
+    }
+
+    &-negative {
+        float: right;
+        display: block;
+    }
+
+    &>.alert {
+        margin-top: var(--space-m);
+    }
+}

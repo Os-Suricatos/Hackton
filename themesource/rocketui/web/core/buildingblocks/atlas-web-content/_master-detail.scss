@@ -1,0 +1,34 @@
+// Bootstrap
+//no master-detail
+
+// Atlas
+@import "../../../../../atlas_web_content/web/buildingblocks/master-detail";
+
+//Customizations
+
+/* ==========================================================================
+   Master Detail
+
+    A list with a listening dataview
+========================================================================== */
+.masterdetail {
+    background: var(--#{$prefix}secondary-bg);
+    .masterdetail-master {
+        border-right: 1px solid var(--#{$prefix}border-color);
+    }
+    .masterdetail-detail {
+        padding: var(--space-m);
+    }
+}
+
+//== Variations
+//-------------------------------------------------------------------------------------------------------------------//
+.masterdetail-vertical {
+    background: var(--#{$prefix}secondary-bg);
+    .masterdetail-master {
+        border-bottom: 1px solid var(--#{$prefix}border-color);
+    }
+    .masterdetail-detail {
+        padding: var(--space-m);
+    }
+}

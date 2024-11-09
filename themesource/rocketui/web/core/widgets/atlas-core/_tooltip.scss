@@ -1,0 +1,16 @@
+// Bootstrap
+@import "../../bootstrap/scss/tooltip";
+
+// Atlas
+@import "../../../../../atlas_core/web/core/widgets/tooltip";
+
+@include tooltip();
+
+//Customizations
+
+.widget-tooltip {
+    .widget-tooltip-content {
+        background-color: var(--#{$prefix}tertiary-bg);
+        color: var(--#{$prefix}primary);
+    }
+}

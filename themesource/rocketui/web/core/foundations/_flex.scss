@@ -1,0 +1,33 @@
+// Atlas
+// @import '../../../../../themesource/atlas_core/web/core/base/flex'
+
+@mixin flex-items($number) {
+    @for $i from 1 through $number {
+        .flexitem-#{$i} {
+            flex: #{$i} #{$i} 1%;
+        }
+    }
+}
+
+// Flex layout
+.flexcontainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    overflow: hidden;
+
+    .flexitem {
+        margin-right: $gutter-size;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .flexitem-main {
+        flex: 1;
+        overflow: hidden;
+    }
+}
+
+@include flex-items($number: 12);

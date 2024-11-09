@@ -1,0 +1,16 @@
+// Bootstrap
+// no radio-button
+
+// Atlas
+@import "../../../../../atlas_core/web/core/widgets/radio-button";
+
+@include radio-button();
+
+//Customizations
+.has-error {
+    color: #a94442;
+}
+
+label {
+    font-weight: normal;
+}

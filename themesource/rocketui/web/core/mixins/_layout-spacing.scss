@@ -1,0 +1,85 @@
+@mixin layout-spacing($type: padding, $direction: all, $device: responsive, $is_important: false) {
+    @if not $exclude-spacing {
+        $suffix: "";
+        @if $is_important != false {
+            $suffix: " !important";
+        }
+        @if $device==responsive {
+            @if $direction==all {
+                @media (max-width: $screen-sm-max) {
+                    #{$type}: var(--layout-spacing-top) var(--layout-spacing-right) var(--layout-spacing-bottom) var(--layout-spacing-left)#{$suffix};
+                }
+                @media (min-width: $screen-md) {
+                    #{$type}: var(--layout-spacing-top) var(--layout-spacing-right) var(--layout-spacing-bottom) var(--layout-spacing-left)#{$suffix};
+                }
+                @media (min-width: $screen-lg) {
+                    #{$type}: var(--layout-spacing-top) var(--layout-spacing-right) var(--layout-spacing-bottom) var(--layout-spacing-left)#{$suffix};
+                }
+            } @else if $direction==top {
+                @media (max-width: $screen-sm-max) {
+                    #{$type}-top: var(--layout-spacing-top)#{$suffix};
+                }
+                @media (min-width: $screen-md) {
+                    #{$type}-top: var(--layout-spacing-top)#{$suffix};
+                }
+                @media (min-width: $screen-lg) {
+                    #{$type}-top: var(--layout-spacing-top)#{$suffix};
+                }
+            } @else if $direction==right {
+                @media (max-width: $screen-sm-max) {
+                    #{$type}-right: var(--layout-spacing-right) #{$suffix};
+                }
+                @media (min-width: $screen-md) {
+                    #{$type}-right: var(--layout-spacing-right) #{$suffix};
+                }
+                @media (min-width: $screen-lg) {
+                    #{$type}-right: var(--layout-spacing-right) #{$suffix};
+                }
+            } @else if $direction==bottom {
+                @media (max-width: $screen-sm-max) {
+                    #{$type}-bottom: var(--layout-spacing-bottom) #{$suffix};
+                }
+                @media (min-width: $screen-md) {
+                    #{$type}-bottom: var(--layout-spacing-bottom) #{$suffix};
+                }
+                @media (min-width: $screen-lg) {
+                    #{$type}-bottom: var(--layout-spacing-bottom) #{$suffix};
+                }
+            } @else if $direction==left {
+                @media (max-width: $screen-sm-max) {
+                    #{$type}-left: var(--layout-spacing-left) #{$suffix};
+                }
+                @media (min-width: $screen-md) {
+                    #{$type}-left: var(--layout-spacing-left) #{$suffix};
+                }
+                @media (min-width: $screen-lg) {
+                    #{$type}-left: var(--layout-spacing-left) #{$suffix};
+                }
+            }
+        } @else if $device==tablet {
+            @if $direction==all {
+                #{$type}: #{$t-layout-spacing}#{$suffix};
+            } @else if $direction==top {
+                #{$type}-top: var(--layout-spacing-top) #{$suffix};
+            } @else if $direction==right {
+                #{$type}-right: var(--layout-spacing-right) #{$suffix};
+            } @else if $direction==bottom {
+                #{$type}-bottom: var(--layout-spacing-bottom) #{$suffix};
+            } @else if $direction==left {
+                #{$type}-left: var(--layout-spacing-left) #{$suffix};
+            }
+        } @else if $device==mobile {
+            @if $direction==all {
+                #{$type}: var(--layout-spacing-top) var(--layout-spacing-right) var(--layout-spacing-bottom) var(--layout-spacing-left)#{$suffix};
+            } @else if $direction==top {
+                #{$type}-top: var(--layout-spacing-top) #{$suffix};
+            } @else if $direction==right {
+                #{$type}-right: var(--layout-spacing-right) #{$suffix};
+            } @else if $direction==bottom {
+                #{$type}-bottom: var(--layout-spacing-bottom) #{$suffix};
+            } @else if $direction==left {
+                #{$type}-left: var(--layout-spacing-left) #{$suffix};
+            }
+        }
+    }
+}

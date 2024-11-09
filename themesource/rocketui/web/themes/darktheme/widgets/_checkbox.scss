@@ -1,0 +1,13 @@
+@include color-mode(dark){
+    input[type="checkbox"] {
+        &:checked:disabled:before {
+            border-color: transparent;
+            background-color: var(--#{$prefix}secondary-bg-subtle);
+        }
+
+        &:disabled:after,
+        &:checked:disabled:after {
+            border-color: var(--#{$prefix}tertiary-color);
+        }
+    }
+}

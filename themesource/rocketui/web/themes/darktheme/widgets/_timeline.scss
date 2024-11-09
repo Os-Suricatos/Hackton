@@ -1,0 +1,25 @@
+@include color-mode(dark){
+    .widget-timeline-icon-circle {
+        background-color: var(--#{$prefix}primary);
+    }
+
+    .widget-eventTime {
+        color: var(--#{$prefix}primary);
+    }
+
+    .widget-timeline-date-header {
+        border: 1px solid var(--#{$prefix}border-color);
+    }
+
+    .widget-timeline-event:not(:last-of-type) {
+        border-left: 1px solid var(--#{$prefix}border-color);
+    }
+
+    .widget-timeline-events-wrapper {
+        border-left: 1px solid var(--#{$prefix}border-color);
+    }
+
+    .widget-timeline-description {
+        color: var(--#{$prefix}gray);
+    }
+}

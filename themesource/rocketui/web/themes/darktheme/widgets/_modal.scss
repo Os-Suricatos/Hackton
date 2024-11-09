@@ -1,0 +1,24 @@
+@include color-mode(dark){
+    .modal-dialog {
+        .modal-content {
+          border: 1px solid var(--#{$prefix}border-color);
+    
+          .modal-header {
+            border-bottom: 1px solid var(--#{$prefix}border-color);
+          
+            .close {
+              color: var(--#{$prefix}black);
+            }
+          }
+        }
+      }
+    
+      .modal-content {
+        border: 1px solid var(--#{$prefix}border-color);
+    
+      }
+    
+      .mx-dropdown-list>li {
+        border: 1px solid var(--#{$prefix}border-color);
+      }
+}

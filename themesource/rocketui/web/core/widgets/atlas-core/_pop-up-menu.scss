@@ -1,0 +1,64 @@
+// Bootstrap
+//no popup
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/pop-up-menu';
+
+@include pop-up-menu();
+
+//Customizations
+
+/* --------- Pop Up Menu Widget Override --------- */
+
+.popupmenu-menu {
+    background-color: var(--#{$prefix}body-bg);
+}
+
+.popupmenu-basic-divider {
+    background-color: var(--#{$prefix}secondary);
+}
+
+.popupmenu-basic-item {
+    color: var(--#{$prefix}body-color);
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: var(--#{$prefix}secondary-bg);
+        background-color: var(--#{$prefix}secondary-bg);
+    }
+
+    &-inverse {
+        color: $brand-inverse;
+    }
+
+    &-primary {
+        color: var(--#{$prefix}primary);
+    }
+
+    &-info {
+        color: var(--#{$prefix}info);
+    }
+
+    &-success {
+        color: var(--#{$prefix}success);
+    }
+
+    &-warning {
+        color: var(--#{$prefix}warning);
+    }
+
+    &-danger {
+        color: var(--#{$prefix}danger);
+    }
+}
+
+.popupmenu-custom-item {
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: var(--#{$prefix}secondary-bg);
+        background-color: var(--#{$prefix}secondary-bg);
+    }
+}
+

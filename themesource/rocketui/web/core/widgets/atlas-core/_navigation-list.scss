@@ -1,0 +1,38 @@
+// Bootstrap
+//no nav list
+
+// Atlas
+// @import '../../../../../atlas_core/web/core/widgets/navigation-list';
+
+// @include navigation-list();
+
+//Customizations
+
+/* --------- Navigation List Widget Override --------- */
+.mx-navigationlist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li.mx-navigationlist-item {
+        @include transition();
+        padding: var(--space-base);
+        border-width: 1px;
+        border-style: none none solid none;
+        border-color: var(--#{$prefix}border-color);
+        border-radius: 0;
+        background-color: transparent;
+
+
+        &:hover,
+        &:focus {
+            color: inherit;
+            background-color: var(--#{$prefix}secondary-bg-subtle);
+        }
+
+        &.active {
+            color: inherit;
+            background-color: var(--#{$prefix}secondary-bg-subtle);
+        }
+    }
+}

@@ -1,0 +1,86 @@
+// Bootstrap
+// no group box
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/group-box';
+@import '../../../../../atlas_core/web/core/helpers/group-box';
+
+@include group-box();
+@include group-box-helpers();
+
+//Customizations
+
+/* --------- Groupbox Widget Override --------- */
+.mx-groupbox {
+    
+    > .mx-groupbox-header {
+        border-radius: var(--#{$prefix}border-radius) var(--#{$prefix}border-radius) 0 0;
+        padding: var(--space-s) var(--space-base);
+    }
+
+    > .mx-groupbox-body {
+        background-color: var(--#{$prefix}tertiary-bg);
+        border-radius: var(--#{$prefix}border-radius);
+        padding: var(--space-s) var(--space-base);
+    }
+}
+
+//With header
+.mx-groupbox-header ~ .mx-groupbox-body {
+    border-radius: 0 0 var(--#{$prefix}border-radius) var(--#{$prefix}border-radius);
+}
+
+/* --------- Groupbox Helpers Override --------- */
+.groupbox-transparent {
+    > .mx-groupbox-header {
+        color: var(--#{$prefix}gray-800);
+    }
+
+    .mx-groupbox-collapse-icon {
+        color: var(--#{$prefix}primary);
+    }
+}
+
+.groupbox-callout {
+
+    >.mx-groupbox-header,
+    >.mx-groupbox-body {
+        background-color: var(--#{$prefix}primary-lighter);
+    }
+
+    >.mx-groupbox-header {
+        color: var(--#{$prefix}primary);
+    }
+}
+
+    /* ==========================================================================
+       Group box
+
+    //== Design Properties
+    //## Helper classes to change the look and feel of the component
+    ========================================================================== */
+    // Color variations
+    .groupbox-secondary,
+    .groupbox-default {
+        @include groupbox-variant($groupbox-default-color, var(--#{$prefix}secondary));
+    }
+
+    .groupbox-primary {
+        @include groupbox-variant($groupbox-primary-color, var(--#{$prefix}primary));
+    }
+
+    // Success appears as green
+    .groupbox-success {
+        @include groupbox-variant($groupbox-success-color, var(--#{$prefix}success));
+    }
+
+    // Warning appears as orange
+    .groupbox-warning {
+        @include groupbox-variant($groupbox-warning-color, var(--#{$prefix}warning));
+    }
+
+    // Danger and error appear as red
+    .groupbox-danger {
+        @include groupbox-variant($groupbox-danger-color, var(--#{$prefix}danger));
+    }
+

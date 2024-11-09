@@ -1,0 +1,257 @@
+// Bootstrap
+// no data grid
+
+// Atlas
+// @import '../../../../../atlas_core/web/core/widgets/data-grid';
+// @import '../../../../../atlas_core/web/core/helpers/data-grid';
+
+// @include data-grid();
+// @include data-grid-helpers();
+
+//Customization
+
+.mx-datagrid {
+    --grid-padding: var(--space-base);
+
+    table {
+        border-width: var(--space-none);
+
+        th {
+            border-style: solid;
+            border-color: var(--#{$prefix}border-color);
+            border-top-width: var(--space-none);
+            border-right: var(--space-none);
+            border-bottom-width: 1px;
+            border-left: var(--space-none);
+            padding: var(--grid-padding) var(--grid-padding) var(--grid-padding) var(--grid-padding);
+            vertical-align: middle;
+
+            .mx-datagrid-head-caption {
+                white-space: normal;
+            }
+        }
+
+        /* Table Body */
+        tbody tr {
+            td {
+                @include transition();
+                padding: var(--grid-padding) var(--grid-padding) var(--grid-padding) var(--grid-padding);
+                vertical-align: middle;
+                border-width: var(--space-none);
+                border-color: var(--#{$prefix}border-color);
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                background-color: transparent;
+
+                &:focus {
+                    outline: none;
+                }
+
+                /* Text without spaces */
+                .mx-datagrid-data-wrapper {
+                    text-overflow: ellipsis;
+                }
+            }
+
+            &.selected td,
+            &.selected:hover td {
+                color: var(--#{$prefix}body-color);
+                background-color: var(--#{$prefix}secondary-bg-subtle);
+            }
+        }
+
+        /* Table Footer */
+        tfoot {
+            >tr>th {
+                padding: var(--grid-padding) var(--grid-padding) var(--grid-padding) var(--grid-padding);
+                border-width: var(--space-none);
+                background-color: var(--#{$prefix}primary);
+            }
+
+            >tr>td {
+                padding: var(--grid-padding) var(--grid-padding) var(--grid-padding) var(--grid-padding);
+                border-width: var(--space-none);
+                background-color: transparent;
+                font-weight: $font-weight-bold;
+            }
+        }
+
+        & *:focus {
+            outline: var(--space-none);
+        }
+    }
+}
+
+
+.datagrid {
+
+    // Striped style
+    &-striped.mx-datagrid {
+        table {
+            th {
+                border-width: var(--space-none);
+            }
+
+            tbody tr {
+                td {
+                    border-top-width: var(--space-none);
+                }
+
+                &:nth-child(odd) td {
+                    background-color: var(--#{$prefix}secondary-bg-subtle);
+                }
+            }
+        }
+    }
+
+    // Bordered style
+    &-bordered.mx-datagrid {
+        table {
+            //border: 1px solid;
+
+            th {
+                border:1px solid var(--#{$prefix}border-color);
+                border-width: 1px 1px 1px 0;
+                &:first-of-type{
+                    border-top-left-radius: var(--table-border-radius);
+                    border-width: 1px;
+                }
+        
+                &:last-of-type{
+                    border-top-right-radius: var(--table-border-radius);
+                }
+            }
+
+
+            tbody tr {
+                td {
+                    border: 1px solid var(--#{$prefix}border-color);
+                    border-width: 0 1px 1px 0;
+                    &:first-child{
+                        border-width: 0 1px 1px 1px;
+                    }
+                }
+
+                &:last-of-type{
+                    & td:first-of-type{
+                        border-bottom-left-radius: var(--table-border-radius);
+                    }
+            
+                    & td:last-of-type{
+                        border-bottom-right-radius: var(--table-border-radius);
+                    }
+                }
+            }
+        }
+
+        tfoot {
+            >tr>th {
+                border-width: var(--space-none);
+                background-color: var(--#{$prefix}primary);
+            }
+
+            >tr>td {
+                border-width: 1px;
+            }
+        }
+    }
+
+    // Transparent style so you can see the background
+    &-transparent.mx-datagrid {
+        table {
+            background-color: transparent;
+
+            tbody tr {
+                &:nth-of-type(odd) {
+                    background-color: transparent;
+                }
+
+                td {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    // Hover style activated
+    &-hover.mx-datagrid {
+        table {
+            tbody tr {
+                &:hover td {
+                    background-color: var(--#{$prefix}secondary-bg-subtle);
+                }
+
+                &.selected:hover td {
+                    background-color: var(--#{$prefix}secondary-bg-subtle);
+                }
+            }
+        }
+    }
+
+    // Datagrid Row Sizes
+    &-lg.mx-datagrid {
+        table {
+            th {
+                padding: calc(var(--grid-padding) * 2) calc(var(--grid-padding) * 2) calc(var(--grid-padding) * 2) calc(var(--grid-padding) * 2);
+            }
+
+            tbody tr {
+                td {
+                    padding: calc(var(--grid-padding) * 2) calc(var(--grid-padding) * 2) calc(var(--grid-padding) * 2) calc(var(--grid-padding) * 2);
+                }
+            }
+        }
+    }
+
+    &-sm.mx-datagrid {
+        table {
+            th {
+                padding: calc(var(--grid-padding) / 2) calc(var(--grid-padding) / 2) calc(var(--grid-padding) / 2) calc(var(--grid-padding) / 2);
+            }
+
+            tbody tr {
+                td {
+                    padding: calc(var(--grid-padding) / 2) calc(var(--grid-padding) / 2) calc(var(--grid-padding) / 2) calc(var(--grid-padding) / 2);
+                }
+            }
+        }
+    }
+
+    // Datagrid Full Search
+    // Default Mendix Datagrid Widget with adjusted search field. Only 1 search field is allowed
+    &-fullsearch.mx-grid {
+        .mx-grid-search-button {
+            @extend .btn-primary;
+        }
+
+        .mx-grid-reset-button {
+            display: none;
+        }
+
+        .mx-grid-search-item {
+            display: block;
+        }
+
+        .mx-grid-search-label {
+            display: none;
+        }
+
+        .mx-grid-searchbar {
+            .mx-grid-search-controls {
+                position: absolute;
+                right: var(--space-none);
+            }
+
+            .mx-grid-search-input {
+                width: 80%;
+                padding-left: var(--space-none);
+
+                .btn,
+                .form-control {
+                    height: var(--space-l);
+                    font-size: var(--font-size-xs);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+// Bootstrap
+//no slider
+
+// Atlas
+// @import "../../../../../atlas_core/web/core/widgets/slider";
+// @import "../../../../../atlas_core/web/core/helpers/slider";
+
+// @include slider();
+// @include slider-helpers();
+
+//Customizations
+
+.widget-slider {
+    --rc-slider-color: var(--#{$prefix}primary);
+
+    margin-bottom: var(--space-base);
+    padding: var(--space-xs) var(--space-s);
+
+    .rc-slider-handle {
+        border-color: var(--#{$prefix}border-color);
+        width: 24px;
+        height: 24px;
+        margin-top: -10px;
+    }
+
+    .rc-slider.rc-slider-with-marks {
+        padding-bottom: var(--space-m);
+    }
+
+    .rc-slider-disabled .rc-slider-track {
+        background-color: var(--#{$prefix}gray-500);
+    }
+
+    .rc-slider-mark-text-active {
+        color: var(--#{$prefix}tertiary-color);
+    }
+
+    .rc-slider:not(.rc-slider-disabled) {
+        .rc-slider-track {
+            background-color: var(--rc-slider-color);
+        }
+
+        .rc-slider-handle:focus {
+            border-color: var(--rc-slider-color);
+            box-shadow: 0 0 0 5px color-mix(in srgb, var(--rc-slider-color), var(--#{$prefix}white) 25%);
+            outline: none;
+        }
+
+        .rc-slider-handle-click-focused:focus {
+            border-color: color-mix(in srgb, var(--rc-slider-color), var(--#{$prefix}white) 25%);
+            box-shadow: unset;
+        }
+
+        .rc-slider-dot-active,
+        .rc-slider-handle:hover {
+            border-color: var(--rc-slider-color);
+        }
+
+        .rc-slider-handle:active {
+            border-color: var(--rc-slider-color);
+            box-shadow: 0 0 5px var(--rc-slider-color);
+        }
+    }
+
+    &-primary & {
+        --rc-slider-color: var(--#{$prefix}primary);
+    }
+
+    &-success & {
+        --rc-slider-color: var(--#{$prefix}success);
+    }
+
+    &-warning & {
+        --rc-slider-color: var(--#{$prefix}warning);
+    }
+
+    &-danger &{
+        --rc-slider-color: var(--#{$prefix}danger);
+    }
+}
+
+

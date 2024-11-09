@@ -1,0 +1,59 @@
+// Bootstrap
+// no input
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/input';
+
+@include input();
+
+//Customizations
+
+/* --------- Inputs Widget Override --------- */
+.form-control {
+    background-color: var(--#{$prefix}secondary-bg);
+    border-radius: var(--#{$prefix}border-radius);
+
+    option{
+        &:hover{
+            background-color: var(--#{$prefix}white);
+        }
+    }
+}
+
+.has-focus input,
+.has-focus textarea,
+.has-focus select {
+    border-color: $form-input-border-focus-color !important;
+}
+
+select.option{
+    &:hover{
+        background-color: var(--#{$prefix}white);
+    }
+}
+
+.mx-compound-control .btn {
+    background-color: var(--#{$prefix}secondary-bg);
+    border-color: var(--#{$prefix}border-color);
+}
+
+.has-error .form-control {
+    border-color: var(--#{$prefix}danger);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.form-horizontal .form-group {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.form-group .control-label {
+    color: var(--#{$prefix}body-color);
+    font-weight: var(--font-semi-bold);
+}
+
+//Input Filters Styling
+.filter-container .form-control {
+    border-radius: var(--#{$prefix}border-radius);
+}

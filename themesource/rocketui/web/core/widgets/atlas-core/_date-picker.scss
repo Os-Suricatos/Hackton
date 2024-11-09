@@ -1,0 +1,124 @@
+// Bootstrap
+// no date picker
+
+// Atlas
+// @import '../../../../../atlas_core/web/core/widgets/date-picker';
+
+// @include date-picker();
+
+//Customizations
+.mx-calendar {
+    z-index: 10010 !important;
+    padding: var(--space-s);
+    font-size: var(--font-size-xs);
+    background: var(--#{$prefix}body-bg);
+    border-radius: var(--#{$prefix}border-radius);
+    border: 1px solid var(--#{$prefix}border-color);
+    box-shadow: var(--#{$prefix}box-shadow-sm);
+
+    .mx-calendar-month-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: var(--space-none) var(--space-xxs) var(--space-s) var(--space-xxs);
+    }
+
+    .mx-calendar-month-next,
+    .mx-calendar-month-previous,
+    .mx-calendar-month-dropdown {
+        border: 0;
+        cursor: pointer;
+        background: transparent;
+    }
+
+    .mx-calendar-month-next,
+    .mx-calendar-month-previous {
+        &:hover {
+            color: var(--#{$prefix}primary);
+        }
+    }
+
+    .mx-calendar-month-dropdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .mx-calendar-month-current:first-child {
+            margin-right: var(--space-s);
+        }
+    }
+
+    th {
+        color: var(--#{$prefix}primary);
+    }
+
+    th,
+    td {
+        width: var(--space-l);
+        height: var(--space-l);
+        text-align: center;
+    }
+
+    td {
+        color: var(--#{$prefix}body-color);
+
+        &:hover {
+            cursor: pointer;
+            border-radius: var(--#{$prefix}border-radius-lg);
+            color: var(--#{$prefix}primary);
+            background-color: var(--#{$prefix}secondary);
+        }
+    }
+
+    .mx-calendar-day-month-next,
+    .mx-calendar-day-month-previous {
+        color: color-mix(in srgb, var(--#{$prefix}body-color), white 45%);
+    }
+
+    .mx-calendar-day-selected,
+    .mx-calendar-day-selected:hover {
+        color: var(--#{$prefix}white);
+        border-radius: var(--#{$prefix}border-radius-lg);
+        background: var(--#{$prefix}primary);
+    }
+
+
+    .mx-calendar-year-switcher {
+        text-align: center;
+        margin-top: var(--space-s);
+        color: color-mix(in srgb, var(--#{$prefix}primary), white 30%);
+
+        span.mx-calendar-year-selected {
+            color: var(--#{$prefix}primary);
+            margin-left: var(--space-s);
+            margin-right: var(--space-s);
+        }
+
+        span:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            background-color: transparent;
+        }
+    }
+}
+
+.mx-calendar-month-dropdown-options {
+    z-index: 10020 !important;
+    position: absolute;
+    top: var(--space-m);
+    padding: var(--space-xxs) var(--space-s);
+    border-radius: var(--#{$prefix}border-radius);
+    background-color: var(--#{$prefix}body-bg);
+
+    div {
+        cursor: pointer;
+        font-size: var(--space-s);
+        padding: var(--space-xxs) var(--space-none);
+
+        &:hover,
+        &:focus {
+            color: var(--#{$prefix}primary);
+        }
+    }
+}

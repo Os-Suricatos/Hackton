@@ -1,0 +1,63 @@
+// Bootstrap
+// no scroll container
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/scroll-container-react';
+@include scroll-container-react();
+
+// Customizations
+
+
+
+.mx-scrollcontainer-left {
+    --sidebar-size: 300px;
+}
+
+.mx-scrollcontainer .mx-placeholder {
+    height: 100%;
+    width: 100%;
+
+    // .mx-layoutgrid,
+    // .mx-layoutgrid-fluid {
+    //     padding: var(--space-m);
+
+    //     .mx-layoutgrid,
+    //     .mx-layoutgrid-fluid {
+    //         padding-left: var(--gutter-size);
+    //         padding-right: var(--gutter-size);
+    //     }
+    // }
+}
+
+// .mx-scrollcontainer .mx-placeholder,
+// .mx-scrollcontainer-center {
+//     // height: 100%;
+//     // width: 100%;
+
+//     .mx-layoutgrid,
+//     .mx-layoutgrid-fluid {
+//         .mx-layoutgrid,
+//         .mx-layoutgrid-fluid {
+//             padding: 0;
+//         }
+//     }
+// }
+
+.layout-atlas-responsive-topbar .mx-scrollcontainer-top.region-topbar{
+    .mx-layoutgrid,
+    .mx-layoutgrid-fluid {
+        // padding: 0 var(--layout-spacing-right) 0 var(--layout-spacing-left);
+        padding: 0 ;
+        .mx-layoutgrid,
+        .mx-layoutgrid-fluid {
+            padding: 0;
+            // padding-left: var(--gutter-size);
+            // padding-right: var(--gutter-size);
+        }
+    }
+}
+
+.mx-scrollcontainer-slide.mx-scrollcontainer-open>.mx-scrollcontainer-toggleable.mx-scrollcontainer-left,
+.mx-scrollcontainer-push.mx-scrollcontainer-open>.mx-scrollcontainer-toggleable.mx-scrollcontainer-left {
+    margin-right: 0;
+}

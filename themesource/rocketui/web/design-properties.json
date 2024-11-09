@@ -1,0 +1,474 @@
+{
+    "Widget": [
+        {
+            "name": "Spacing top",
+            "type": "Dropdown",
+            "description": "The spacing above this element.",
+            "options": [
+                {
+                    "name": "Outer none",
+                    "oldNames": ["None"],
+                    "class": "mt-0"
+                },
+                {
+                    "name": "Outer extra extra small",
+                    "class": "mt-1"
+                },
+                {
+                    "name": "Outer extra small",
+                    "class": "mt-2"
+                },
+                {
+                    "name": "Outer small",
+                    "oldNames": ["Small"],
+                    "class": "mt-3"
+                },
+                {
+                    "name": "Outer base",
+                    "oldNames": ["Medium"],
+                    "class": "mt-4"
+                },
+                {
+                    "name": "Outer medium",
+                    "class": "mt-5"
+                },
+                {
+                    "name": "Outer large",
+                    "oldNames": ["Large"],
+                    "class": "mt-6"
+                },
+                {
+                    "name": "Outer extra large",
+                    "class": "mt-7"
+                },
+                {
+                    "name": "Inner none",
+                    "class": "pt-0"
+                },
+                {
+                    "name": "Inner extra extra small",
+                    "class": "pt-1"
+                },
+                {
+                    "name": "Inner extra small",
+                    "class": "pt-2"
+                },
+                {
+                    "name": "Inner small",
+                    "class": "pt-3"
+                },
+                {
+                    "name": "Inner base",
+                    "class": "pt-4"
+                },
+                {
+                    "name": "Inner medium",
+                    "class": "pt-5"
+                },
+                {
+                    "name": "Inner large",
+                    "class": "pt-6"
+                },
+                {
+                    "name": "Inner extra large",
+                    "class": "pt-7"
+                }
+            ]
+        },
+        {
+            "name": "Spacing bottom",
+            "type": "Dropdown",
+            "description": "The spacing below this element.",
+            "options": [
+                {
+                    "name": "Outer none",
+                    "oldNames": ["None"],
+                    "class": "mb-0"
+                },
+                {
+                    "name": "Outer extra extra small",
+                    "class": "mb-1"
+                },
+                {
+                    "name": "Outer extra small",
+                    "class": "mb-2"
+                },
+                {
+                    "name": "Outer small",
+                    "oldNames": ["Small"],
+                    "class": "mb-3"
+                },
+                {
+                    "name": "Outer base",
+                    "oldNames": ["Medium"],
+                    "class": "mb-4"
+                },
+                {
+                    "name": "Outer medium",
+                    "class": "mb-5"
+                },
+                {
+                    "name": "Outer large",
+                    "oldNames": ["Large"],
+                    "class": "mb-6"
+                },
+                {
+                    "name": "Outer extra large",
+                    "class": "mb-7"
+                },
+                {
+                    "name": "Inner none",
+                    "class": "pb-0"
+                },
+                {
+                    "name": "Inner extra extra small",
+                    "class": "pb-1"
+                },
+                {
+                    "name": "Inner extra small",
+                    "class": "pb-2"
+                },
+                {
+                    "name": "Inner small",
+                    "class": "pb-3"
+                },
+                {
+                    "name": "Inner base",
+                    "class": "pb-4"
+                },
+                {
+                    "name": "Inner medium",
+                    "class": "pb-5"
+                },
+                {
+                    "name": "Inner large",
+                    "class": "pb-6"
+                },
+                {
+                    "name": "Inner extra large",
+                    "class": "pb-7"
+                }
+            ]
+        },
+        {
+            "name": "Spacing left",
+            "type": "Dropdown",
+            "description": "The spacing to the left of this element.",
+            "options": [
+                {
+                    "name": "Outer none",
+                    "oldNames": ["None"],
+                    "class": "ms-0"
+                },
+                {
+                    "name": "Outer extra extra small",
+                    "class": "ms-1"
+                },
+                {
+                    "name": "Outer extra small",
+                    "class": "ms-2"
+                },
+                {
+                    "name": "Outer small",
+                    "oldNames": ["Small"],
+                    "class": "ms-3"
+                },
+                {
+                    "name": "Outer base",
+                    "oldNames": ["Medium"],
+                    "class": "ms-4"
+                },
+                {
+                    "name": "Outer medium",
+                    "class": "ms-5"
+                },
+                {
+                    "name": "Outer large",
+                    "oldNames": ["Large"],
+                    "class": "ms-6"
+                },
+                {
+                    "name": "Outer extra large",
+                    "class": "ms-7"
+                },
+                {
+                    "name": "Inner none",
+                    "class": "ps-0"
+                },
+                {
+                    "name": "Inner extra extra small",
+                    "class": "ps-1"
+                },
+                {
+                    "name": "Inner extra small",
+                    "class": "ps-2"
+                },
+                {
+                    "name": "Inner small",
+                    "class": "ps-3"
+                },
+                {
+                    "name": "Inner base",
+                    "class": "ps-4"
+                },
+                {
+                    "name": "Inner medium",
+                    "class": "ps-5"
+                },
+                {
+                    "name": "Inner large",
+                    "class": "ps-6"
+                },
+                {
+                    "name": "Inner extra large",
+                    "class": "ps-7"
+                }
+            ]
+        },
+        {
+            "name": "Spacing right",
+            "type": "Dropdown",
+            "description": "The spacing to the right of this element.",
+            "options": [
+                {
+                    "name": "Outer none",
+                    "oldNames": ["None"],
+                    "class": "me-0"
+                },
+                {
+                    "name": "Outer extra extra small",
+                    "class": "me-1"
+                },
+                {
+                    "name": "Outer extra small",
+                    "class": "me-2"
+                },
+                {
+                    "name": "Outer small",
+                    "oldNames": ["Small"],
+                    "class": "me-3"
+                },
+                {
+                    "name": "Outer base",
+                    "oldNames": ["Medium"],
+                    "class": "me-4"
+                },
+                {
+                    "name": "Outer medium",
+                    "class": "me-5"
+                },
+                {
+                    "name": "Outer large",
+                    "oldNames": ["Large"],
+                    "class": "me-6"
+                },
+                {
+                    "name": "Outer extra large",
+                    "class": "me-7"
+                },
+                {
+                    "name": "Inner none",
+                    "class": "pe-0"
+                },
+                {
+                    "name": "Inner extra extra small",
+                    "class": "pe-1"
+                },
+                {
+                    "name": "Inner extra small",
+                    "class": "pe-2"
+                },
+                {
+                    "name": "Inner small",
+                    "class": "pe-3"
+                },
+                {
+                    "name": "Inner base",
+                    "class": "pe-4"
+                },
+                {
+                    "name": "Inner medium",
+                    "class": "pe-5"
+                },
+                {
+                    "name": "Inner large",
+                    "class": "pe-6"
+                },
+                {
+                    "name": "Inner extra large",
+                    "class": "pe-7"
+                }
+            ]
+        }
+    ],
+    "DynamicText": [
+        {
+            "name": "Weight",
+            "oldNames": ["Font Weight"],
+            "type": "Dropdown",
+            "description": "Emphasize the text with a heavier or lighter font weight",
+            "options": [
+                {
+                    "name": "Light",
+                    "class": "fw-light"
+                },
+                {
+                    "name": "Medium",
+                    "class": "fw-medium"
+                },
+                {
+                    "name": "Normal",
+                    "class": "fw-normal"
+                },
+                {
+                    "name": "Semibold",
+                    "class": "fw-semibold"
+                },
+                {
+                    "name": "Bold",
+                    "class": "fw-bold"
+                }
+            ]
+        },        
+        {
+            "name": "Alignment",
+            "type": "Dropdown",
+            "description": "Align the text.",
+            "options": [
+                {
+                    "name": "Left",
+                    "class": "text-start d-block"
+                },
+                {
+                    "name": "Center",
+                    "class": "text-center d-block"
+                },
+                {
+                    "name": "Right",
+                    "class": "text-end d-block"
+                }
+            ]
+        }
+    ],
+    "DivContainer": [
+        {
+            "name": "Align content",
+            "type": "Dropdown",
+            "description": "Align content of this element left, right or center it. Align elements inside the container as a row or as a column.",
+            "options": [
+                {
+                    "name": "Left align as a row",
+                    "oldNames": ["Left align as row"],
+                    "class": "d-flex flex-row align-items-center justify-content-start"
+                },
+                {
+                    "name": "Center align as a row",
+                    "oldNames": ["Center align as row"],
+                    "class": "d-flex flex-row align-items-center justify-content-center"
+                },
+                {
+                    "name": "Right align as a row",
+                    "oldNames": ["Right align as row"],
+                    "class": "d-flex flex-row align-items-center justify-content-end"
+                },
+                {
+                    "name": "Left align as a column",
+                    "oldNames": ["Left align as column"],
+                    "class": "d-flex flex-column align-items-start justify-content-center"
+                },
+                {
+                    "name": "Center align as a column",
+                    "oldNames": ["Center align as column"],
+                    "class": "d-flex flex-column align-items-center justify-content-center"
+                },
+                {
+                    "name": "Right align as a column",
+                    "oldNames": ["Right align as column"],
+                    "class": "d-flex flex-column align-items-end justify-content-center"
+                }
+            ]
+        },
+        {
+            "name": "Background color",
+            "type": "Dropdown",
+            "description": "Change the background color of the container.",
+            "options": [
+                {
+                    "name": "Primary",
+                    "oldNames": ["Background Default","Background Primary","Brand Primary"],
+                    "class": "background-primary"
+                },
+                {
+                    "name": "Secondary",
+                    "oldNames": ["Background Dashboard","Background Secondary","Default", "Brand Default","Brand Secondary"],
+                    "class": "background-secondary"
+                },
+                {
+                    "name": "Success",
+                    "oldNames": ["Brand Success"],
+                    "class": "background-success"
+                },
+                {
+                    "name": "Warning",
+                    "oldNames": ["Brand Warning"],
+                    "class": "background-warning"
+                },
+                {
+                    "name": "Danger",
+                    "oldNames": ["Brand Danger"],
+                    "class": "background-danger"
+                },
+                {
+                    "name": "Body",
+                    "class": "background-body"
+                },
+                {
+                    "name": "Black",
+                    "class": "background-black"
+                },
+                {
+                    "name": "White",
+                    "class": "background-white"
+                },
+                {
+                    "name": "Dark",
+                    "class": "background-dark"
+                },
+                {
+                    "name": "Light",
+                    "class": "background-light"
+                },
+                {
+                    "name": "Background Primary",
+                    "oldNames": ["Background Default"],
+                    "class": "background-body"
+                },
+                {
+                    "name": "Background Secondary",
+                    "oldNames": ["Background Dashboard"],
+                    "class": "background-secondary-bg"
+                }
+            ]
+        },
+        {
+            "name": "Add shadow",
+            "type": "Dropdown",
+            "description": "Add a shadow to this element",
+            "options": [
+                {
+                    "name": "Small",
+                    "class": "shadow-sm"
+                },
+                {
+                    "name": "Medium",
+                    "class": "shadow"
+                },
+                {
+                    "name": "Large",
+                    "class": "shadow-lg"
+                }
+            ]
+        }
+    ]
+    
+}

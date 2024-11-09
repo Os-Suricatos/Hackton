@@ -1,0 +1,41 @@
+// Bootstrap
+// no dataview
+
+// Atlas
+// @import '../../../../../atlas_core/web/core/widgets/data-view';
+
+// @include data-view();
+
+//Customization
+.mx-dataview {
+
+    > .mx-dataview-content > .mx-container-nested {
+        > .row {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+    /* Dataview empty message */
+    .mx-dataview-message {
+        color: var(--#{$prefix}body-color);
+        background: var(--#{$prefix}background-color);
+    }
+}
+
+.mx-dataview-controls {
+    margin-top: var(--space-base);
+    padding: var(--space-base) 0 0;
+    border-top: 1px solid var(--#{$prefix}border-color);
+    border-radius: 0;
+    background-color: transparent;
+    /* Buttons */
+    .mx-button {
+        margin-right: var(--space-s);
+        margin-bottom: 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    background-color: inherit;
+}

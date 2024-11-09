@@ -1,0 +1,107 @@
+// Bootstrap
+//no simple-menu-bar
+
+// Atlas
+@import "../../../../../atlas_core/web/core/widgets/simple-menu-bar";
+// @import "../../../../../atlas_core/web/core/helpers/simple-menu-bar";
+
+@include simple-menu-bar();
+// @include simple-menu-bar-helpers();
+
+//Customizations
+
+.mx-menubar {
+    background-color: var(--#{$prefix}primary);
+
+    ul.mx-menubar-list {
+
+        li.mx-menubar-item {
+
+            >a {
+                padding: var(--space-base);
+                color: var(--#{$prefix}white);
+                font-size: var(--font-size-s);
+                font-weight: $font-weight-normal;
+
+                .glyphicon,
+                .mx-icon-lined,
+                .mx-icon-filled {
+                    font-size: var(--font-size-h5);
+                }
+            }
+
+            a:hover,
+            a:focus,
+            &:hover a,
+            &:focus a,
+            &.active a {
+                color: var(--#{$prefix}white);
+                background-color: color-mix(in srgb, var(--#{$prefix}primary), var(--#{$prefix}white) 4%);
+            }
+
+            &.active a {
+                color: var(--#{$prefix}white);
+                background-color: color-mix(in srgb, var(--#{$prefix}primary), var(--#{$prefix}white) 8%);
+            }
+        }
+    }
+
+
+    // Vertical variation specifics
+    &-vertical {
+        background-color: var(--#{$prefix}primary);
+
+        ul.mx-menubar-list {
+
+            li.mx-menubar-item {
+
+                a {
+                    border-bottom: 1px solid color-mix(in srgb, var(--#{$prefix}primary), var(--#{$prefix}white) 4%);
+                }
+            }
+        }
+    }
+
+    // Horizontal variation specifics
+    &-horizontal {
+        box-shadow: var(--#{$prefix}box-shadow-sm);
+    }
+}
+
+.bottom-nav-text-icons.mx-menubar {
+    ul.mx-menubar-list {
+        li.mx-menubar-item {
+            flex: 1;
+
+            a {
+                flex-direction: column;
+                padding: var(--space-s) var(--space-s) calc(var(--space-s) / 2);
+                line-height: normal;
+                font-size: var(--font-size-xs);
+
+                .glyphicon,
+                .mx-icon-lined,
+                .mx-icon-filled {
+                    display: block;
+                    margin: 0 0 calc(var(--space-s) / 2) 0;
+                    font-size: var(--font-size-h6);
+                }
+
+                img {
+                    display: block;
+                    height: var(--font-size-h6);
+                    margin: 0 0 calc(var(--space-s) / 2) 0;
+                }
+            }
+        }
+    }
+}
+
+.hide-icons.mx-menubar {
+
+    .glyphicon,
+    .mx-icon-lined,
+    .mx-icon-filled {
+        display: none;
+    }
+}

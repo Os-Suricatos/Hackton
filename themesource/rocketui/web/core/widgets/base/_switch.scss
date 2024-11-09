@@ -1,0 +1,40 @@
+// Bootstrap
+//no switch
+
+// Atlas
+@import "../../../../../atlas_core/web/core/widgets/switch";
+
+@include switch();
+
+//Customizations
+
+.widget-switch{
+    & &-btn-wrapper{
+        height: 30px;
+        width: var(--space-xl);
+        
+
+        .widget-switch-btn{
+            height: var(--space-m); 
+            width: var(--space-m); 
+            top: 3px;    
+            left: 4px;
+            width: 24px;
+            
+            &.right{
+                background-color: var(--#{$prefix}light);
+                left: 24px; 
+                &:active{
+                    width: 24px;
+                    left: 24px;
+                }
+            }
+            &.widget-switch-btn.left{
+            
+                border-radius: 50%;
+                width: var(--space-m);
+            }
+        }
+    }
+
+}

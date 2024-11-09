@@ -1,0 +1,76 @@
+// Bootstrap
+// @import '../../bootstrap/scss/pagination';
+
+// Atlas
+// @import '../../../../../atlas_core/web/core/widgets/pagination';
+
+// @include pagination();
+
+//Customizations
+
+/* --------- Navigation Bar Widget Override --------- */
+.widget-pagination {
+    overflow: unset;
+
+    .pagination {
+        overflow: unset;
+
+        .btn {
+            &:hover {
+                color: var(--#{$prefix}btn-color);
+                background-color: var(--#{$prefix}gray);
+            }
+
+            &:focus {
+                outline: unset;
+                outline-offset: unset;
+                box-shadow: 0 0 0 0.3rem var(--#{$prefix}primary-light);
+            }
+        }
+
+        ul {
+            margin-top: unset;
+            margin-bottom: unset;
+
+            li {
+                display: inline-flex;
+                align-items: center;
+                width: unset;
+                min-width: var(--space-m);
+                min-height: var(--space-m);
+                margin-right: var(--space-base);
+                padding: var(--space-xs) var(--space-s);
+                transition: all 0.2s ease-in-out;
+                color: var(--#{$prefix}body-color);
+                border-radius: var(--#{$prefix}border-radius);
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:not(.break-view) {
+                    &:hover {
+                        color: var(--#{$prefix}btn-color);
+                        background-color: var(--#{$prefix}gray);
+                    }
+
+                    &:focus {
+                        outline: unset;
+                        outline-offset: unset;
+                        box-shadow: 0 0 0 0.3rem var(--#{$prefix}primary-light);
+                    }
+
+                    &.active {
+                        color: var(--#{$prefix}white);
+                        background-color: var(--#{$prefix}primary);
+                    }
+
+                    &.active:hover {
+                        color: var(--#{$prefix}white);
+                        background-color: color-mix(in srgb, var(--#{$prefix}primary), var(--#{$prefix}black) 80%);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+//BS reset styles
+@import "../bootstrap/scss/reboot";
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px; }
+::-webkit-scrollbar-track{
+    background-color: transparent; } 
+:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(173, 181, 189, 0.5);
+    border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(106, 113, 120, 0.5);
+    border-radius: 6px; }
+
+a {
+    color: var(--#{$prefix}link-color);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--#{$prefix}link-hover-color);
+    }
+}

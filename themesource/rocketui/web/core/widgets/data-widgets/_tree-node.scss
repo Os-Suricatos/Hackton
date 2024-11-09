@@ -1,0 +1,87 @@
+// Bootstrap
+// no tree node
+
+// Atlas
+@import '../../../../../datawidgets/web/tree-node';
+// @import '../../../../../datawidgets/web/tree-node-design-properties';
+
+//Customizations
+
+.widget-tree-node {
+    .widget-tree-node-branch-header {
+        padding: var(--space-s) 0;
+
+        .widget-tree-node-loading-spinner {
+            width: var(--space-base);
+            height: var(--space-base);
+        }
+    }
+
+    .widget-tree-node-branch-header-value {
+        font-size: var(--font-size-base);
+        margin: 0 var(--space-s);
+    }
+
+    .widget-tree-node-body {
+        padding-left: var(--space-m);
+    }
+
+    &-lined-styling {
+        .widget-tree-node .widget-tree-node-body {
+            &::before {
+                width: var(--space-none);
+                left: var(--space-s);
+                border: 1px solid var(--#{$prefix}gray-500);
+            }
+        }
+
+        .widget-tree-node[role="group"]>.widget-tree-node-branch>.widget-tree-node-branch-header {
+            &::before {
+                width: var(--space-s);
+                border: 1px solid var(--#{$prefix}gray-500);
+                left: calc(0px - var(--space-base));
+            }
+        }
+    }
+
+    &-hover {
+        .widget-tree-node-branch:hover>.widget-tree-node-branch-header {
+            background-color: var(--#{$prefix}border-color);
+        }
+    }
+
+    &-bordered-horizontal {
+        .widget-tree-node-branch>.widget-tree-node-branch-header {
+            border-width: 0;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: var(--#{$prefix}border-color);
+        }
+    }
+
+    &-bordered-all {
+        border: 1px solid var(--#{$prefix}border-color);
+        border-radius: var(--#{$prefix}border-radius-lg);
+        overflow: hidden;
+
+        .widget-tree-node-body:not(.widget-tree-node-branch-loading) {
+            border-width: 0;
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-top-color: var(--#{$prefix}border-color);
+        }
+
+        .widget-tree-node-branch:not(:first-of-type)>.widget-tree-node-branch-header {
+            border-width: 0;
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-top-color: var(--#{$prefix}border-color);
+        }
+    }
+    &-bordered-none {
+        border-width: 0;
+        .widget-tree-node-branch > .widget-tree-node-branch-header {
+            border-width: 0;
+        }
+    }
+}

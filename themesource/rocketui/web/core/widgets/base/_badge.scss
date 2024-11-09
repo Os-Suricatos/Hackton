@@ -1,0 +1,95 @@
+// Bootstrap
+// @import '../../bootstrap/scss/badge';
+
+// Atlas
+// @import '../../../../../atlas_core/web/core/widgets/badge';
+
+//@include badge();
+
+
+//Customizations (merged BADGE and LABEL into one style sheet since they use the same styling classes)
+.badge,
+.label {
+    align-items: center;
+    border-radius: var(--#{$prefix}border-radius-pill);
+    display: inline-flex;
+    font-size: var(--font-size-s);
+    font-weight: var(--font-semi-bold);
+    font-weight: $font-weight-semibold;
+    height: var(--space-l);
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    min-width: 32px;
+    padding: var(--space-none) var(--space-base);
+
+    .form-control-static {
+        all: unset;
+        font-weight: $font-weight-normal;
+    }
+}
+
+.widget-badge {
+    --badge-color: var(--#{$prefix}white);
+    --badge-bg: var(--#{$prefix}primary);
+    background-color: var(--badge-bg);
+
+    color: var(--badge-color);
+}
+
+.widget-badge-clickable {
+    cursor: pointer;
+}
+
+.widget-badge.label:empty, 
+.widget-badge.badge:empty {
+    display: initial;
+    /* Fix padding to stay round */
+    padding: var(--space-xs) var(--space-s);
+}
+
+.label-secondary,
+.label-default {
+    --badge-color: var(--#{$prefix}primary);
+    --badge-bg: var(--#{$prefix}gray-300);
+}
+
+.label-primary {
+    --badge-color: var(--#{$prefix}white);
+    --badge-bg: var(--#{$prefix}primary);
+}
+
+.label-success {
+    --badge-color: var(--#{$prefix}white);
+    --badge-bg: var(--#{$prefix}success);
+}
+
+.label-inverse {
+    --badge-color: var(--#{$prefix}white);
+    --badge-bg: var(--#{$prefix}info-dark);
+}
+
+.label-info {
+    --badge-color: var(--#{$prefix}white);
+    --badge-bg: var(--#{$prefix}info);
+}
+
+.label-warning {
+    --badge-color: var(--#{$prefix}white);
+    --badge-bg: var(--#{$prefix}warning);
+}
+
+.label-danger {
+    --badge-color: var(--#{$prefix}white);
+    --badge-bg: var(--#{$prefix}danger);
+}
+
+.badge-sm,
+.label-sm {
+    height: 28px;
+}
+
+.badge-lg,
+.label-lg {
+    height: 40px;
+}

@@ -1,0 +1,11 @@
+// @import "../../../../../themesource/atlas_core/web/core/base/mixins/animations";
+
+// Legacy and custom ----------------------------------------------------------/
+// @import "../../../../../themesource/atlas_core/web/core/base/mixins/spacing";
+@import "legacy/spacing"; 
+// @import "../../../../../themesource/atlas_core/web/core/base/mixins/layout-spacing";
+@import "layout-spacing";
+//-----------------------------------------------------------------------------/
+
+// @import "../../../../../themesource/atlas_core/web/core/base/mixins/buttons";
+@import "../../../../../themesource/atlas_core/web/core/base/mixins/groupbox";

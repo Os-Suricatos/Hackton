@@ -1,0 +1,157 @@
+//Atlas
+@import '../../../../../atlas_core/web/layouts/layout-atlas';
+@include layout-atlas();
+//Customizations
+.layout-atlas {
+
+    .mx-scrollcontainer.mx-scrollcontainer-shrink{
+        .region-sidebar .mx-scrollcontainer-wrapper{
+            margin-left: calc(-1 * var(--space-base));
+            // transform: translateX(calc(-1 * var(--space-base)));
+            // transition: transform 250ms ease-in;
+            // will-change: transform;
+
+            transition: margin-left 250ms ease-in;
+        }
+                
+        &.mx-scrollcontainer-open{
+            .region-sidebar .mx-scrollcontainer-wrapper{
+                // transform: translateX(0);
+                margin-left: 0;
+            }
+        }
+    }
+
+    // Sidebar
+    .region-sidebar {
+        background-color: var(--sidebar-bg);
+        box-shadow: var(--#{$prefix}box-shadow-lg);
+
+        .mx-scrollcontainer-wrapper {
+            padding: var(--space-base) var(--space-base) var(--space-s);
+        }
+
+
+        // .sidebar-heading {
+        //     background: $navsidebar-sub-bg;
+        // }
+
+        .toggle-btn {
+            margin-right: var(--space-s);
+            padding: var(--space-base);
+        }
+    }
+
+    
+    // Topbar
+    .region-topbar {
+        background-color: var(--topbar-bg);
+        min-height: var(--topbar-min-height);
+
+        // Topbar Content
+        .topbar-content {
+            min-height: var(--topbar-min-height);
+        }
+
+        // Toggle btn
+        .toggle-btn {
+            color: var(--topbar-color);
+            margin-right: var(--space-base);
+    
+            .mx-icon-filled,
+            .mx-icon-lined {
+                font-size: var(--font-size-m);
+            }
+        }
+
+        // For your company, product, or project name
+        .navbar-brand {
+            // font-size: var(--font-size-base);
+            margin-right: var(--space-s);
+
+            img {
+                margin-right: var(--space-s);
+            }
+
+            a {
+                align-items: center;
+                color: var(--topbar-color);
+                display: inline-flex;
+                font-size: var(--font-size-base);
+                margin-left: var(--space-s);
+            }
+
+            .widget-language-selector{
+                .current-language-text,
+                .language-arrow {
+                    color: var(--topbar-color);
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .mx-navbar {
+            --navbar-bg-color: transparent;
+            --navbar-items-color: var(--topbar-color);
+            --navbar-items-font-size: var(--font-size-base);
+            --navbar-items-border-radius: 0;
+            --navbar-items-hover-color: var(--topbar-color);
+            --navbar-items-hover-bg: rgba(0, 0, 0, 0.05);
+            --navbar-items-active-color: var(--bs-primary-light);
+            --navbar-items-active-bg: rgba(0, 0, 0, 0.05);
+            --navbar-subitems-padding-x: var(--space-base);
+            --navbar-subitems-padding-y: var(--space-s);
+            --navbar-subitems-font-size: var(--font-size-s);
+            --navbar-dropdown-bg: var(--topbar-bg);
+            --navbar-dropdown-padding: 0;
+            --navbar-dropdown-shadow: var(--#{$prefix}box-shadow);
+        
+            .navbar-nav > .mx-navbar-item {
+                
+
+                & > a {
+                    height: var(--topbar-min-height);
+                    // margin-top: var(--space-xs);
+                    // padding: 0 var(--space-m);
+                }
+
+                ul.mx-navbar-submenu .mx-navbar-subitem > a{
+                    margin-left: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.mx-scrollcontainer-open {
+    .region-sidebar {
+        .mx-navigationtree-has-items {
+            //hide if it's  collapsed
+            &.mx-navigationtree-collapsed {
+                &>ul {
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+.widget-language {
+    &-selector {
+        .popupmenu {
+            &-menu {
+                background: var(--bs-secondary-bg-subtle);
+            }
+
+            &-trigger {
+                padding-top: var(--space-s);
+            }
+        }
+
+        
+    }
+}

@@ -1,0 +1,215 @@
+// Bootstrap
+// no list-view
+
+// Atlas
+// @import '../../../../../atlas_core/web/core/widgets/list-view';
+@import '../../../../../atlas_core/web/core/helpers/list-view';
+
+// @include list-view();
+@include list-view-helpers();
+
+//Customizations
+
+/* --------- List View Widget Override --------- */
+.mx-listview {
+    padding: 0;
+
+    & > ul {
+        margin: 0 0 var(--space-base);
+
+        .mx-listview-empty {
+            border-style: none;
+            background-color: transparent;
+        }
+
+        & > li {
+            @include transition();
+            background-color: var(--#{$prefix}secondary-bg);
+            padding: var(--space-base);
+            border-top: 1px solid var(--#{$prefix}border-color);
+
+            &:first-child {
+                border-top: none;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:focus,
+            &:active {
+                outline: 0;
+            }
+
+            & .row{
+                align-items: center;
+
+                .mx-link{
+                    span::before{
+                        font-size: var(--font-size-xs);
+                    }
+                }
+            }
+        }
+    }
+
+    .selected {
+        background: var(--#{$prefix}secondary-bg-subtle);
+    }
+
+    .mx-layoutgrid {
+        padding: 0;
+    }
+
+    &-searchbar {
+        margin-bottom: var(--space-base);
+
+        .btn {
+            width: auto;
+        }
+    }
+
+    .profile-phone & {
+        .mx-listview-searchbar {
+            margin-bottom: var(--space-s);
+            background: var(--#{$prefix}white);
+            box-shadow: var(--#{$prefix}bod-shadow-sm);
+
+            input {
+                padding: var(--space-base) var(--space-base);
+                color: #555555;
+                border-style: none;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .btn {
+                padding: var(--space-base) var(--space-base);
+                color: inherit;
+                border-style: none;
+            }
+        }
+
+        & > ul > li {
+            &:first-child {
+                border-top: none;
+            }
+        }
+    }
+}
+.btn.mx-listview-loadMore {
+    width: 100%;
+    margin: 0 0 var(--space-base);
+}
+
+
+.listview{
+    // List items lined
+    &-lined.mx-listview {
+        & > ul > li {
+            border-top: 1px solid var(--#{$prefix}border-color);
+
+            &:first-child {
+                border-top: 1px solid var(--#{$prefix}border-color);
+            }
+
+            &:last-child {
+                border-bottom: 1px solid var(--#{$prefix}border-color);
+            }
+        }
+    }
+    //List items Bordered
+    &-bordered.mx-listview {
+        & > ul > li {
+            border: 1px solid var(--#{$prefix}border-color);
+            border-top: 0;
+
+            &:first-child {
+                border-top: 1px solid var(--#{$prefix}border-color);
+            }
+
+            // &:last-child {
+            // }
+        }
+    }
+    // List items striped
+    &-striped.mx-listview {
+        & > ul > li:nth-child(2n + 1) {
+            background-color: var(--#{$prefix}secondary-bg-subtle);
+        }
+    }
+    // Items as seperated blocks
+    &-seperated.mx-listview {
+        & > ul > li {
+            margin-bottom: var(--space-base);
+            border: 1px solid var(--#{$prefix}border-color);
+            border-radius: var(--#{$prefix}border-radius);
+        }
+    }
+    // Hover style activated
+    &-hover.mx-listview {
+        & > ul > li {
+            cursor: pointer;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: var(--#{$prefix}secondary-bg-subtle);
+            }
+
+            &.selected {
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: var(--#{$prefix}secondary-bg-subtle);
+                }
+            }
+        }
+    }
+    
+    // Row Sizes
+    &-sm.mx-listview {
+        & > ul > li {
+            padding: var(--space-s);
+        }
+    }
+    &-lg.mx-listview {
+        & > ul > li {
+            padding: var(--space-m);
+        }
+    }
+}
+// Bootstrap columns
+.mx-listview[class*="lv-col"] {
+    overflow: hidden; // For if it is not in a layout, to prevent scrollbars
+    & > ul {
+        display: flex; // normal a table
+        flex-wrap: wrap;
+        margin-right: calc(-1 * var(--gutter-size));
+        margin-left: calc(-1 * var(--gutter-size));
+
+        &::before,
+        &::after {
+            // clearfix
+            display: table;
+            clear: both;
+            content: " ";
+        }
+
+        & > li {
+            // bootstrap col
+            position: relative;
+            min-height: 1px;
+            padding-right: var(--gutter-size);
+            padding-left: var(--gutter-size);
+            border: 0;
+            @media (max-width: $screen-md-max) {
+                width: 100% !important;
+            }
+
+            & > .mx-dataview {
+                overflow: hidden;
+            }
+        }
+    }
+}
+

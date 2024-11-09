@@ -1,0 +1,80 @@
+// Bootstrap
+//no timeline
+
+// Atlas
+@import "../../../../../atlas_core/web/core/widgets/timeline";
+
+@include timeline();
+
+//Customizations
+
+.widget-timeline-wrapper {
+    --timeline-grouping-size: 120px;
+    --timeline-grouping-border-color: var(--#{$prefix}border-color);
+    --timeline-grouping-border-radius: var(--#{$prefix}border-radius-xxl);
+    --timeline-border-color: var(--#{$prefix}border-color);
+    --timeline-icon-size: 18px;
+    --timeline-icon-color: var(--#{$prefix}primary);
+    --timeline-event-time-color: var(--#{$prefix}primary);
+    --timeline-image-size: 36px;
+
+    .widget-timeline-date-header {
+        width: var(--timeline-grouping-size);
+        padding: var(--space-s);
+        border: 1px solid var(--timeline-grouping-border-color);
+        border-radius: var(--timeline-grouping-border-radius);
+    }
+
+    //Timeline entries
+    .widget-timeline-events-wrapper {
+        margin-left: calc(var(--timeline-grouping-size) / 2);
+        padding: var(--space-m) 0 0 0;
+        border-left: 1px solid var(--timeline-border-color);
+
+    }
+
+    //Timeline entry
+    .widget-timeline-event {
+        padding: 0 var(--space-m) var(--space-m) var(--space-m);
+        margin-bottom: var(--space-base);
+
+    }
+
+    //Timeline entry content wrapper
+    .widget-timeline-icon-wrapper {
+        .glyphicon,
+        .mx-icon-lined,
+        .mx-icon-filled {
+            font-size: var(--timeline-icon-size);
+        }
+    }
+
+    .widget-timeline-content-wrapper {
+        .widget-timeline-info-wrapper {
+            margin-right: var(--space-base);
+        }
+    }
+
+    .timeline-with-image .widget-timeline-content-wrapper {
+        .widget-timeline-date-time-wrapper {
+            margin-right: var(--space-base);
+        }
+    }
+
+    //Timeline entry components
+    .widget-timeline-icon-circle {
+        width: var(--timeline-icon-size);
+        height: var(--timeline-icon-size);
+        background-color: var(--timeline-icon-color);
+    }
+
+    .widget-eventTime {
+        color: var(--timeline-event-time-color);
+    }
+
+    .timeline-entry-image {
+        border-radius: var(--#{$prefix}border-radius);
+        height: var(--timeline-image-size);
+        width: var(--timeline-image-size);
+    }
+}

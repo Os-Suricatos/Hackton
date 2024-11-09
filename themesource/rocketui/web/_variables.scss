@@ -1,0 +1,10 @@
+// Mendix Default variables (AtlasUI)
+@import "../../../themesource/atlas_core/web/exclusion-variables"; //Default varibles of Atlas UI
+@import "../../../theme/web/exclusion-variables.scss"; //Client custom varibles
+@import "../../../themesource/atlas_core/web/variables"; //Default varibles of Atlas UI
+@import "default-variables"; //Default varibles of Rocket UI
+@import "../../../theme/web/custom-variables"; //Client custom varibles
+
+
+// Import bootstrap config, like variable mapping and customizations
+@import '../web/core/bootstrap/_import_bootstrap_configs';

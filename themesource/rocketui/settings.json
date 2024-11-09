@@ -1,0 +1,13 @@
+{
+  "excludes": {
+    "Atlas_Core": {
+      "styling": true
+    },
+    "Atlas_Web_Content":{
+      "styling": true
+    },
+    "DataWidgets": {
+      "styling" : true
+    }
+  }
+}

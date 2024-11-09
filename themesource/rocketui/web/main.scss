@@ -1,0 +1,36 @@
+// Variables
+@import 'variables';
+
+@if $font-family-import !=false {
+    @import url($font-family-import);
+}
+
+//MXUI
+@import 'core/foundations/mxui';
+
+//Import Mixings (Atlas or custome)
+@import 'core/mixins/_import_mixins';
+
+// Base
+@import 'root';
+@import 'core/foundations/reboot';
+@import 'core/foundations/typography';
+@import 'core/foundations/icongraphy';
+
+// Widgets
+@import 'core/widgets/_import_widgets';
+
+// Building blocks
+@import 'core/buildingblocks/_import_buildingblock';
+
+// Layouts
+@import 'core/layouts/_import_layouts';
+
+// Page templates
+@import 'core/pagetemplates/_import_pagetemplates';
+
+// Themes
+@import 'themes/_import_themes';
+
+// Usefull Classes
+@import 'core/foundations/usefull_classes';

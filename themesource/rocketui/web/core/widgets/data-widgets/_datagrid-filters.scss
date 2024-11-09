@@ -1,0 +1,62 @@
+// Bootstrap
+// no gallery
+
+// Atlas
+//Data widgets
+@import '../../../../../datawidgets/web/datagrid-filters';
+
+//Customization
+.filter-selector {
+    .filter-selector-content {
+        .filter-selectors {
+            background: var(--#{$prefix}secondary-bg);
+
+            li {
+                &.filter-selected {
+                    background-color: var(--#{$prefix}secondary-bg-subtle);
+                    color: var(--#{$prefix}primary-light);
+                }
+
+                &:hover,
+                &:focus {
+                    background-color: var(--#{$prefix}secondary-bg-subtle);
+                }
+            }
+        }
+    }
+}
+
+:not(.dropdown-content)>.dropdown-list {
+    background: var(--#{$prefix}secondary-bg);
+}
+
+.dropdown-container .dropdown-list{
+
+
+    background: var(--#{$prefix}secondary-bg);
+    border-radius: var(--#{$prefix}border-radius);
+    box-shadow: var(--#{$prefix}box-shadow);
+    font-size: var(--font-size-s);
+    margin: 0;
+    margin-top: var(--space-xs);
+    
+
+    li {
+
+        &.filter-selected {
+            background-color: var(--#{$prefix}secondary-bg-subtle);
+            color: var(--#{$prefix}primary);
+        }
+
+        &:hover,
+        &:focus {
+
+            background-color: var(--#{$prefix}secondary-bg-subtle);
+        }
+    }
+}
+
+
+.dropdown-container .dropdown-triggerer {
+    border-radius: var(--#{$prefix}border-radius);
+}

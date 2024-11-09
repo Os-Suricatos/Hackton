@@ -1,0 +1,28 @@
+// Bootstrap
+@import '../../bootstrap/scss/progress';
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/progress';
+
+@include progress();
+
+//Customizations
+
+/* --------- Progress Widget Override --------- */
+.mx-progress {
+    color: var(--#{$prefix}body-color);
+    background: var(--#{$prefix}secondary-bg);
+
+    .mx-progress-message {
+        color: var(--#{$prefix}body-color);
+    }
+
+    .mx-progress-indicator {
+        background: var(--#{$prefix}gray-100);
+
+        &:before,
+        &:after {
+            background: var(--#{$prefix}primary);
+        }
+    }
+}

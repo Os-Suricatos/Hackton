@@ -1,0 +1,26 @@
+@include color-mode(dark){
+    .widget-tree-node {
+        .widget-tree-node-branch-header {
+
+            svg {
+                &.widget-tree-node-branch-header-icon-animated {
+                    filter: invert(1);
+                }
+
+                &.widget-tree-node-branch-header-icon-collapsed-left {
+                    filter: invert(1);
+                }
+            }
+        }
+    }
+
+    .widget-tree-node-lined-styling {
+        .widget-tree-node .widget-tree-node-body {
+            position: relative;
+
+            &::before {
+                border: 1px solid var(--#{$prefix}border-color);
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@include color-mode(dark){
+    img.img-thumbnail, 
+    .img-thumbnail img {
+        border-color: var(--#{$prefix}secondary-bg);
+        background-color: var(--#{$prefix}tertiary-bg);
+        box-shadow: var(--#{$prefix}box-shadow-sm) black;
+    }
+}

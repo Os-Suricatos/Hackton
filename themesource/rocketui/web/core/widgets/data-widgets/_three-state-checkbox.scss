@@ -1,0 +1,62 @@
+// Bootstrap
+// no three state checkbox
+
+// Atlas
+@import '../../../../../datawidgets/web/three-state-checkbox';
+
+//Customizations
+input[type="checkbox"].three-state-checkbox {
+
+    &:indeterminate:before,
+    &:checked:before {
+        border-color: var(--#{$prefix}primary);
+        background-color: var(--#{$prefix}primary);
+    }
+} 
+
+input[type="checkbox"].three-state-checkbox {
+    &:before {
+        border: 1px solid var(--#{$prefix}border-color);
+        border-radius: 4px;
+    }
+
+    &:not(:indeterminate):after {
+        // Checkmark
+        border: 2px solid var(--#{$prefix}secondary-bg);
+        border-top: 0;
+        border-right: 0;
+    }
+
+    &:indeterminate:after {
+        border: 0 solid var(--#{$prefix}secondary-bg);
+        border-bottom-width: 2px;
+    }
+
+    &:not(:disabled):not(:checked):hover:after {
+        content: "";
+        border-color: var(--#{$prefix}border-color); // color of checkmark on hover
+    }
+
+    &:indeterminate:before,
+    &:checked:before {
+        border-color: var(--#{$prefix}primary);
+        background-color: var(--#{$prefix}primary);
+    }
+
+    &:disabled:before {
+        background-color: var(--#{$prefix}tertiary-bg);
+    }
+
+    &:checked:disabled:before {
+        background-color: rgba(var(--#{$prefix}primary), 0.4);
+    }
+
+    &:disabled:after,
+    &:checked:disabled:after {
+        border-color: var(--#{$prefix}border-color);
+    }
+
+    & + .control-label {
+        margin-left: var(--space-s);
+    }
+}

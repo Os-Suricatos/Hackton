@@ -1,0 +1,26 @@
+@include color-mode(dark){
+    .table {
+        background-color: var(--#{$prefix}secondary-bg);
+
+        .th {
+            background-color: var(--#{$prefix}secondary-bg);
+            border-color: var(--#{$prefix}border-color);
+        }
+
+
+        .td {
+            border-color: var(--#{$prefix}border-color);
+        }
+    }
+
+    .pagination-bar {
+        .pagination-button {
+            border-color: transparent;
+
+            &:hover {
+                color: var(--#{$prefix}primary);
+                background-color: transparent;
+            }
+        }
+    }
+}

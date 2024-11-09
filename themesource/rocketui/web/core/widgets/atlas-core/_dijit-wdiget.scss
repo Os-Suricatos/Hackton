@@ -1,0 +1,36 @@
+// Bootstrap
+//no layout grid
+
+// Atlas
+@import "../../../../../atlas_core/web/core/widgetscustom/dijit-widget.scss";
+
+@include dijit-widget();
+
+//Customizations
+.mx-tooltip {
+    .dijitTooltipContainer {
+        border-color: var(--#{$prefix}gray-500);
+    }
+
+    .dijitTooltipConnector {
+        border-right-color: var(--#{$prefix}gray-500);
+    }
+}    
+.dijitMenuPopup {
+    margin-top: var(--space-s);
+
+    .dijitMenu {    
+        // Menu item
+        .dijitMenuItem {    
+            // Hover
+            &.dijitMenuItemHover {   
+                .dijitMenuItemLabel {
+                    background: var(--#{$prefix}primary);
+                }
+            }
+        }
+
+    }
+}
+    
+    

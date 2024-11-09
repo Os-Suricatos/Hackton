@@ -1,0 +1,18 @@
+// Bootstrap
+//no groupbox
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/header';
+
+@include header();
+
+//Customizations
+
+/* --------- Header Widget Override --------- */
+.mx-header {
+    .mx-link {
+        &:active {
+            color: var(--#{$prefix}link-hover-color);
+        }
+    }
+}

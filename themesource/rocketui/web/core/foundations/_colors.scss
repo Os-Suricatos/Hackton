@@ -1,0 +1,178 @@
+$commonColor: (
+    "gray-100": var(--#{$prefix}gray-100),
+    "gray-200": var(--#{$prefix}gray-200),
+    "gray-300": var(--#{$prefix}gray-300),
+    "gray-400": var(--#{$prefix}gray-400),
+    "gray-500": var(--#{$prefix}gray-500),
+    "gray-600": var(--#{$prefix}gray-600),
+    "gray-700": var(--#{$prefix}gray-700),
+    "gray-800": var(--#{$prefix}gray-800),
+    "gray-900": var(--#{$prefix}gray-900),
+    "primary-lightest": var(--#{$prefix}primary-lightest),
+    "primary-lighter": var(--#{$prefix}primary-lighter),
+    "primary-light": var(--#{$prefix}primary-light),
+    "primary-dark": var(--#{$prefix}primary-dark),
+    "primary-darker": var(--#{$prefix}primary-darker),
+    "primary-darkest": var(--#{$prefix}primary-darkest),
+    "danger-lighter": var(--#{$prefix}danger-lighter),
+    "danger-light": var(--#{$prefix}danger-light),
+    "danger-dark": var(--#{$prefix}danger-dark),
+    "danger-darker": var(--#{$prefix}danger-darker),
+    "info-lighter": var(--#{$prefix}info-lighter),
+    "info-light": var(--#{$prefix}info-light),
+    "info-dark": var(--#{$prefix}info-dark),
+    "info-darker": var(--#{$prefix}info-darker),
+    "success-lighter": var(--#{$prefix}success-lighter),
+    "success-light": var(--#{$prefix}success-light),
+    "success-dark": var(--#{$prefix}success-dark),
+    "success-darker": var(--#{$prefix}success-darker),
+    "warning-lighter": var(--#{$prefix}warning-lighter),
+    "warning-light": var(--#{$prefix}warning-light),
+    "warning-dark": var(--#{$prefix}warning-dark),
+    "warning-darker": var(--#{$prefix}warning-darker),
+);
+
+$colors: map-merge($colors, $commonColor);
+
+$textColor: map-merge(
+    $utilities-text-colors,
+    map-merge(
+        (
+            "body-secondary": var(--#{$prefix}secondary-color),
+            "body-tertiary": var(--#{$prefix}tertiary-color),
+            "body-emphasis": var(--#{$prefix}emphasis-color),
+            "reset": inherit,
+        ),
+        $commonColor
+    )
+);
+
+$backgroundColor: map-merge(
+    $utilities-bg-colors,
+    map-merge(
+        (
+            "transparent": transparent,
+            "secondary-bg": var(--#{$prefix}secondary-bg),
+            "tertiary-bg": var(--#{$prefix}tertiary-bg),
+        ),
+        $commonColor
+    )
+);
+
+$borderColor: map-merge($utilities-border-colors, $commonColor);
+
+$linkUnderlineColor: map-merge($utilities-links-underline, $commonColor);
+
+@include bsBanner(ROCKET UI COLORS);
+
+@each $color, $value in $textColor {
+    @if $color == "reset" {
+        .text-#{$color} {
+            color: #{$value} if($enable-important-utilities, !important, null);
+        }
+    } @else if $color == "body" {
+        .text-#{$color} {
+            color: var(--#{$prefix}#{$color}-color)
+                if($enable-important-utilities, !important, null);
+        }
+    } @else {
+        .text-#{$color} {
+            color: var(--#{$prefix}#{$color})
+                if($enable-important-utilities, !important, null);
+        }
+    }
+}
+
+@each $color, $value in $backgroundColor {
+    @if $color == "body" {
+        .background-#{$color} {
+            background-color: var(--#{$prefix}#{$color}-bg)
+                if($enable-important-utilities, !important, null);
+        }
+    } @else if $color == "transparent" {
+        .background-#{$color} {
+            background-color: #{$value}
+                if($enable-important-utilities, !important, null);
+        }
+    } @else {
+        .background-#{$color} {
+            background-color: var(--#{$prefix}#{$color})
+                if($enable-important-utilities, !important, null);
+        }
+    }
+}
+
+@each $color, $value in $utilities-border-colors {
+    .border-#{$color} {
+        border-color: var(--#{$prefix}#{$color})
+            if($enable-important-utilities, !important, null);
+    }
+}
+
+@each $color, $value in $linkUnderlineColor {
+    .link-underline-#{$color} {
+        text-decoration-color: var(--#{$prefix}#{$color})
+            if($enable-important-utilities, !important, null);
+    }
+}
+
+// Custom ../bootstrap/scss/helpers/color-bg";
+@each $color, $value in $theme-colors {
+    .text-background-#{$color} {
+        background-color: var(--#{$prefix}#{$color})
+            if($enable-important-utilities, !important, null);
+        color: color-contrast($value)
+            if($enable-important-utilities, !important, null);
+    }
+}
+
+// End - Custom ../bootstrap/scss/helpers/color-bg";
+
+// Custom ../bootstrap/scss/helpers/colored-links";
+@each $color, $value in $theme-colors {
+    .link-#{$color} {
+        color: var(--#{$prefix}#{$color})
+            if($enable-important-utilities, !important, null);
+        text-decoration-color: var(--#{$prefix}#{$color})
+            if($enable-important-utilities, !important, null);
+
+        @if $link-shade-percentage !=0 {
+            &:hover,
+            &:focus {
+                $hover-color: if(
+                    color-contrast($value) ==$color-contrast-light,
+                    shade-color($value, $link-shade-percentage),
+                    tint-color($value, $link-shade-percentage)
+                );
+                color: $hover-color
+                    if($enable-important-utilities, !important, null);
+                text-decoration-color: $hover-color
+                    if($enable-important-utilities, !important, null);
+            }
+        }
+    }
+}
+
+// One-off special link helper as a bridge until v6
+.link-body-emphasis {
+    color: var(--#{$prefix}emphasis-color)
+        if($enable-important-utilities, !important, null);
+    text-decoration-color: var(--#{$prefix}emphasis-color)
+        if($enable-important-utilities, !important, null);
+
+    @if $link-shade-percentage !=0 {
+        &:hover,
+        &:focus {
+            color: var(--#{$prefix}emphasis-color)
+                if($enable-important-utilities, !important, null);
+            text-decoration-color: var(--#{$prefix}emphasis-color)
+                if($enable-important-utilities, !important, null);
+        }
+    }
+}
+
+// End - Custom ../bootstrap/scss/helpers/colored-links";
+
+.icon-link {
+    text-decoration-color: var(--#{$prefix}link-color);
+}

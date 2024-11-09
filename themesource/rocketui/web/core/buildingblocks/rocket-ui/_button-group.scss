@@ -1,0 +1,71 @@
+// Bootstrap
+@import '../../bootstrap/scss/button-group';
+
+// Atlas
+//none
+
+//Customizations
+.btn-group.mx-radiobuttons.inline.form-group{
+    .radio{
+        margin: 0;
+        [type="radio"]{
+            display: none;
+            
+            + label{
+                --btn-color: var(--bs-primary);
+                --btn-background: var(--bs-secondary-bg);
+                --btn-border-color: var(--bs-primary);
+                --btn-focus-color: var(--btn-color);
+                --btn-focus-background: var(--btn-background);
+                --btn-focus-border-color: var(--btn-focus-background);
+                --btn-disabled-color: var(--bs-gray-500);
+                --btn-disabled-background: var(--bs-gray-200);
+                --btn-disabled-border-color: var(--bs-gray-300);
+                --btn-focus-outline-width: var(--bs-focus-ring-width);
+                --btn-focus-outline-color: var(--bs-focus-ring-color);
+                --btn-padding-x: var(--space-base);
+                --btn-padding-y: var(--space-s);
+                --btn-border-radius: var(--#{$prefix}border-radius-pill);
+                align-items: center;
+                background-color: var(--btn-background);
+                background-image: none;
+                border: 1px solid var(--btn-border-color);
+                border-radius: 0;
+                box-shadow: none;
+                color: var(--btn-color);
+                cursor: pointer;
+                display: inline-flex;
+                font-size: var(--font-size-s);
+                font-weight: 500;
+                gap: var(--space-s);
+                line-height: 21px;
+                margin: 0;
+                min-height: 40px;
+                padding: var(--btn-padding-y) var(--btn-padding-x);
+                text-align: center;
+                text-shadow: none;
+                transition: all 0.2s ease-in-out;
+                -webkit-user-select: none;
+                user-select: none;
+                vertical-align: middle;
+                white-space: nowrap;                
+            }
+
+            &:checked + label{
+                --btn-color: var(--bs-secondary-bg);
+                --btn-background: var(--bs-primary);
+            }
+        }
+
+
+        &:first-child [type="radio"] + label{
+            border-bottom-left-radius: var(--btn-border-radius);
+            border-top-left-radius: var(--btn-border-radius);
+        }
+
+        &:last-child [type="radio"] + label{
+            border-bottom-right-radius: var(--btn-border-radius);
+            border-top-right-radius: var(--btn-border-radius);
+        }
+    }
+}

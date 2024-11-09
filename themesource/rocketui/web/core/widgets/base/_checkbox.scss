@@ -1,0 +1,58 @@
+// Bootstrap
+//@import "../../bootstrap/scss/forms/form-check"; // not imported since classes are quite a bit different
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/check-box';
+
+@include check-box();
+
+
+//Customizations
+// input[type="checkbox"] {
+//     width: var(--space-base);
+//     height: var(--space-base);
+
+//     &:before {
+//         border: 1px solid var(--form-input-border-color);
+//         border-radius: var(--form-input-border-radius);
+//     }
+
+//     &:after {
+//         // Checkmark
+//         width: var(--space-s);
+//         height: var(--space-xs);
+//         margin: var(--space-xs) var(--space-xs);
+//         transform: rotate(-45deg);
+//         pointer-events: none;
+//         border: var(--space-xxs) solid var(--#{$prefix}white);
+//         border-top: 0;
+//         border-right: 0;
+//     }
+
+//     &:not(:disabled):not(:checked):hover:after {
+//         content: "";
+//         border-color: var(--form-input-bg-hover); // color of checkmark on hover
+//     }
+
+//     &:checked:before {
+//         border-color: var(--#{$prefix}primary);
+//         background-color: var(--#{$prefix}primary);
+//     }
+    
+//     &:disabled:before {
+//         background-color: var(--form-input-bg-disabled);
+//     }
+
+//     &:checked:disabled:before {
+//         background-color: color-mix(in srgb, var(--form-input-placeholder-color) 40%, Transparent);
+//     }
+
+//     &:disabled:after,
+//     &:checked:disabled:after {
+//         border-color: var(--form-input-bg-disabled);
+//     }
+
+//     & + .control-label {
+//         margin-left: var(--form-label-gutter);
+//     }
+// }

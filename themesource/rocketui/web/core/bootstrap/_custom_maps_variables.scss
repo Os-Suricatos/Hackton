@@ -1,0 +1,147 @@
+@import "scss/_variables.scss";
+// Overwrite map variables for Bootstrap
+$colors: map-remove(
+    $colors,
+    "blue",
+    "indigo",
+    "purple",
+    "pink",
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "teal",
+    "cyan"
+);
+
+$colors: map-merge(
+    $colors,
+    (
+        "primary-lightest": $color-primary-lightest,
+        "primary-lighter": $color-primary-lighter,
+        "primary-light": $color-primary-light,
+        "primary-dark": $color-primary-dark,
+        "primary-darker": $color-primary-darker,
+        "primary-darkest": $color-primary-darkest,
+        "danger-lighter": $color-danger-lighter,
+        "danger-light": $color-danger-light,
+        "danger-dark": $color-danger-dark,
+        "danger-darker": $color-danger-darker,
+        "info-lighter": $color-info-lighter,
+        "info-light": $color-info-light,
+        "info-dark": $color-info-dark,
+        "info-darker": $color-info-darker,
+        "success-lighter": $color-success-lighter,
+        "success-light": $color-success-light,
+        "success-dark": $color-success-dark,
+        "success-darker": $color-success-darker,
+        "warning-lighter": $color-warning-lighter,
+        "warning-light": $color-warning-light,
+        "warning-dark": $color-warning-dark,
+        "warning-darker": $color-warning-darker,
+    )
+);
+
+$spacers: (
+    "0": var(--space-none),
+    "1": var(--space-xxs),
+    "2": var(--space-xs),
+    "3": var(--space-s),
+    "4": var(--space-base),
+    "5": var(--space-m),
+    "6": var(--space-l),
+    "7": var(--space-xl),
+);
+
+// Spacer values to create on ROOT
+$spacers-mapping-values: (
+    "none": 0,
+    "xxs": $spacing-smallest,
+    "xs": $spacing-smaller,
+    "s": $spacing-small,
+    "base": $spacing-medium,
+    "m": $spacing-large,
+    "l": $spacing-larger,
+    "xl": $spacing-largest,
+);
+
+
+//------------------- END: Spacings ----------------------//
+
+// Spacing
+$utilities-spacers-class: (
+    "margin": margin,
+    "margin-x": margin-x,
+    "margin-y": margin-y,
+    "margin-top": margin-top,
+    "margin-end": margin-right,
+    "margin-bottom": margin-bottom,
+    "margin-start": margin-left,
+
+    "negative-margin": margin,
+    "negative-margin-x": margin-x,
+    "negative-margin-y": margin-y,
+    "negative-margin-top": margin-top,
+    "negative-margin-end": margin-right,
+    "negative-margin-bottom": margin-bottom,
+    "negative-margin-start": margin-left,
+    // Padding utilities
+    "padding": padding,
+    "padding-x": padding-x,
+    "padding-y": padding-y,
+    "padding-top": padding-top,
+    "padding-end": padding-right,
+    "padding-bottom": padding-bottom,
+    "padding-start": padding-left,
+);
+
+// Font size values to create on ROOT
+$font-sizes: (
+    "display": var(--font-size-display),
+    "h1": var(--font-size-h1),
+    "h2": var(--font-size-h2),
+    "h3": var(--font-size-h3),
+    "h4": var(--font-size-h4),
+    "h5": var(--font-size-h5),
+    "h6": var(--font-size-h6),
+    "m": var(--font-size-m),
+    "base": var(--font-size-base),
+    "s": var(--font-size-s),
+    "xs": var(--font-size-xs),
+);
+
+// Font size values to create on ROOT
+$font-size-mapping-values: (
+    "display": $font-size-display,
+    "h1": $font-size-h1,
+    "h2": $font-size-h2,
+    "h3": $font-size-h3,
+    "h4": $font-size-h4,
+    "h5": $font-size-h5,
+    "h6": $font-size-h6,
+    "m": $font-size-large,
+    "base": $font-size-default,
+    "s": $font-size-small,
+    "xs": $font-size-smallest,
+);
+
+$font-size-display: map-get($font-sizes, "display");
+$font-size-h1: map-get($font-sizes, "h1");
+$font-size-h2: map-get($font-sizes, "h2");
+$font-size-h3: map-get($font-sizes, "h3");
+$font-size-h4: map-get($font-sizes, "h4");
+$font-size-h5: map-get($font-sizes, "h5");
+$font-size-h6: map-get($font-sizes, "h6");
+$font-size-large: map-get($font-sizes, "m");
+$font-size-default: map-get($font-sizes, "base");
+$font-size-small: map-get($font-sizes, "s");
+$font-size-smallest: map-get($font-sizes, "xs");
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: $screen-sm,
+    md: $screen-md,
+    lg: $screen-lg,
+    xl: $screen-xl,
+    xxl: $screen-xxl,
+);

@@ -1,0 +1,71 @@
+@mixin button-variant(
+    //Default Colors
+    $color: var(--#{$prefix}white),
+    $background,
+    $border-color: var(--btn-background),
+    //Hover Colors
+    $hover-color: color-mix(in srgb,var(--btn-color), black 5%),
+    $hover-background: color-mix(in srgb,var(--btn-background), black 5%),
+    $hover-border-color: var(--btn-hover-background),
+    //Pressed Colors
+    $pressed-color: color-mix(in srgb,var(--btn-color), black 25%),
+    $pressed-background: color-mix(in srgb,var(--btn-background), black 25%),
+    $pressed-border-color: var(--btn-pressed-background),
+    //Focus Colors
+    $focus-color: var(--btn-color),
+    $focus-background: var(--btn-background),
+    $focus-border-color: var(--btn-focus-background),
+) {
+    //Default Colors
+    --btn-color: #{$color};
+    --btn-background: #{$background};
+    --btn-border-color: #{$border-color};
+    //Hover Colors
+    --btn-hover-color: #{$hover-color};
+    --btn-hover-background: #{$hover-background};
+    --btn-hover-border-color: #{$hover-border-color};
+    //Pressed Colors
+    --btn-pressed-color: #{$pressed-color};
+    --btn-pressed-background: #{$pressed-background};
+    --btn-pressed-border-color: #{$pressed-border-color};
+    //Focus Colors
+    --btn-focus-color: #{$focus-color};
+    --btn-focus-background: #{$focus-background};
+    --btn-focus-border-color: #{$focus-border-color};
+}
+
+@mixin button-outline-variant(
+  //Default Colors
+  $color,
+  $background: var(--#{$prefix}white),
+  $border-color: $color,
+  //Hover Colors
+  $hover-color: color-mix(in srgb,var(--btn-color), black 5%),
+  $hover-background: color-mix(in srgb,var(--btn-background), black 5%),
+  $hover-border-color: var(--btn-hover-color),
+  //Pressed Colors
+  $pressed-color: color-mix(in srgb,var(--btn-color), black 25%),
+  $pressed-background: color-mix(in srgb,var(--btn-background), black 25%),
+  $pressed-border-color: var(--btn-pressed-color),
+  //Focus Colors
+  $focus-color: var(--btn-color),
+  $focus-background: var(--btn-background),
+  $focus-border-color: var(--btn-focus-color),
+) {
+  //Default Colors
+  --btn-color: #{$color};
+  --btn-background: #{$background};
+  --btn-border-color: #{$border-color};
+  //Hover Colors
+  --btn-hover-color: #{$hover-color};
+  --btn-hover-background: #{$hover-background};
+  --btn-hover-border-color: #{$hover-border-color};
+  //Pressed Colors
+  --btn-pressed-color: #{$pressed-color};
+  --btn-pressed-background: #{$pressed-background};
+  --btn-pressed-border-color: #{$pressed-border-color};
+  //Focus Colors
+  --btn-focus-color: #{$focus-color};
+  --btn-focus-background: #{$focus-background};
+  --btn-focus-border-color: #{$focus-border-color};
+}

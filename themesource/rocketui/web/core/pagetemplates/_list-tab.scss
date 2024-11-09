@@ -1,0 +1,31 @@
+//@import '../../../../atlas_web_content/web/pagetemplates/list-tab';
+
+.listtab-tabs.mx-tabcontainer {
+    background: var(--#{$prefix}tertiary-bg);
+    .mx-tabcontainer-tabs {
+        background: var(--#{$prefix}primary);
+        margin-bottom: 0;
+        li {
+            > a {
+                color: var(--#{$prefix}secondary-bg);
+                opacity: 0.6;
+                &:hover,
+                &:focus {
+                    color: var(--#{$prefix}secondary-bg);
+                }
+            }
+            &.active {
+                > a {
+                    opacity: 1;
+                    color: var(--#{$prefix}secondary-bg);
+                    border-color: var(--#{$prefix}border-color);
+                    &:hover,
+                    &:focus {
+                        color: var(--#{$prefix}secondary-bg);
+                        border-color: var(--#{$prefix}border-color);
+                    }
+                }
+            }
+        }
+    }
+}

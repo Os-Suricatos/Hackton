@@ -1,0 +1,26 @@
+// Bootstrap
+@import '../../bootstrap/scss/alert';
+
+// Atlas
+// @import "../../../../../atlas_web_content/web/buildingblocks/alert";
+
+//Customizations
+/* ==========================================================================
+   Alerts
+
+   Default Bootstrap Alert boxes. Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages
+========================================================================== */
+
+.alert {
+    // scss-docs-start alert-css-vars
+    --#{$prefix}alert-padding-x: var(--space-base);
+    --#{$prefix}alert-padding-y: var(--space-base);
+    --#{$prefix}alert-border: 1px solid;
+    --#{$prefix}alert-border-radius: var(--bs-border-radius-sm);
+    // scss-docs-end alert-css-vars
+
+    &-icon {
+        font-size: var(--font-size-h3);
+    }
+    
+}

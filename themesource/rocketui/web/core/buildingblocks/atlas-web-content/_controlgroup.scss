@@ -1,0 +1,20 @@
+// Bootstrap
+//no controlgroup
+
+// Atlas
+@import "../../../../../atlas_web_content/web/buildingblocks/controlgroup";
+
+//Customizations
+
+/* ==========================================================================
+   Control Group
+   
+   A group of buttons next to eachother
+========================================================================== */
+.controlgroup {
+    .btn,
+    .btn-group {
+        margin-right: var(--space-s);
+        margin-bottom: var(--space-s);
+    }
+}

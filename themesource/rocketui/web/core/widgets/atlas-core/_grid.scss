@@ -1,0 +1,9 @@
+// Bootstrap
+//@import '../bootstrap/scss/grid';
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/grid';
+
+@include grid();
+
+//Customizations

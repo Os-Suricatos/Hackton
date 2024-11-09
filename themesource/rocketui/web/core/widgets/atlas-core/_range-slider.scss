@@ -1,0 +1,71 @@
+// Bootstrap
+//no range-slider
+
+// Atlas
+// @import "../../../../../atlas_core/web/core/widgets/range-slider";
+// @import "../../../../../atlas_core/web/core/helpers/range-slider";
+
+// @include range-slider();
+// @include range-slider-helpers();
+
+//Customizations
+
+.widget-range-slider {
+    --range-slider-color: var(--#{$prefix}primary);
+
+    margin-bottom: var(--space-base);
+    padding: var(--space-xs) var(--space-s);
+
+    .rc-slider-handle {
+        border-color: var(--#{$prefix}gray-300);
+    }
+
+    .rc-slider.rc-slider-with-marks {
+        padding-bottom: var(--space-m);
+    }
+
+    .rc-slider:not(.rc-slider-disabled) {
+        .rc-slider-track {
+            background-color: var(--range-slider-color);
+        }
+
+        .rc-slider-handle:focus {
+            border-color: var(--range-slider-color);
+            box-shadow: 0 0 0 5px color-mix(in srgb, var(--range-slider-color), var(--#{$prefix}white) 25%);
+            outline: none;
+        }
+
+        .rc-slider-handle-click-focused:focus {
+            border-color: color-mix(in srgb, var(--range-slider-color), var(--#{$prefix}white) 25%);
+            box-shadow: unset;
+        }
+
+        .rc-slider-dot-active,
+        .rc-slider-handle:hover {
+            border-color: var(--range-slider-color);
+        }
+
+        .rc-slider-handle:active {
+            border-color: var(--range-slider-color);
+            box-shadow: 0 0 5px var(--range-slider-color);
+        }
+    }
+
+    &-primary & {
+        --range-slider-color: var(--#{$prefix}primary);
+    }
+
+    &-success & {
+        --range-slider-color: var(--#{$prefix}success);
+    }
+
+    &-warning & {
+        --range-slider-color: var(--#{$prefix}warning);
+    }
+
+    &-danger & {
+        --range-slider-color: var(--#{$prefix}danger);
+    }
+
+    
+}

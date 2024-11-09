@@ -1,0 +1,50 @@
+//Bootstrap Root
+@import 'core/bootstrap/scss/root';
+
+:root,
+[data-bs-theme=light] {
+    
+    --tabs-border-color: #{$tabs-border-color};
+    --tabs-color: #{$tabs-color};
+
+    @each $size, $value in $spacers-mapping-values{
+        --space-#{$size}: #{$value};
+    }
+
+    @each $size, $value in $font-size-mapping-values{
+        --font-size-#{$size}: #{$value};
+    }
+
+    --gutter-size: var(--space-s);
+
+    --font-light: #{$font-weight-light};
+    --font-regular: #{$font-weight-normal};
+    --font-semi-bold: #{$font-weight-semibold};
+    --font-bold: #{$font-weight-bold};
+
+    --sidebar-bg: var(--#{$prefix}secondary-bg);
+    --sidebar-bg-hover: rgba(0, 0, 0, 0.05);
+    --sidebar-color: var(--#{$prefix}tertiary-color);
+    --sidebar-color-hover: var(--#{$prefix}gray-800);
+    --sidebar-color-active: var(--#{$prefix}primary);
+    
+    --sidebar-close-width: 52px;
+    --sidebar-icon-height: 52px;
+    --sidebar-icon-width: 52px;
+
+
+    --topbar-min-height: 52px;
+    --topbar-bg: var(--#{$prefix}secondary-bg);
+    --topbar-color: var(--#{$prefix}tertiary-color);
+    --topbar-bg-hover: rgba(0, 0, 0, 0.05);
+    --topbar-color-hover: var(--#{$prefix}gray-600);
+    --topbar-color-active: var(--#{$prefix}gray-600);
+
+    --layout-spacing-top: var(--space-m);
+    --layout-spacing-bottom: var(--space-m);
+    --layout-spacing-left: var(--space-m);
+    --layout-spacing-right: var(--space-m);
+}
+
+// Themes Roots
+@import 'themes/_import_themes_roots';

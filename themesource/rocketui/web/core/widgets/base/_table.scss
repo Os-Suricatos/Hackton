@@ -1,0 +1,314 @@
+// Bootstrap
+// @import "../../bootstrap/scss/tables";
+
+// Atlas
+// @import "../../../../../atlas_core/web/core/widgets/table";
+// @import "../../../../../atlas_core/web/core/helpers/table";
+
+// @include table();
+// @include table-helpers();
+
+table {
+    --padding-table-cell: var(--space-s);
+    --height-row-s: 55px;
+    --height-row-m: 70px;
+    --height-row-l: 120px;
+    --table-bg: var(--#{$prefix}secondary-bg);
+    --table-border-radius: var(--#{$prefix}border-radius);
+    --bs-table-striped-bg: var(--bs-secondary-bg-subtle);
+    
+    background-color: var(--table-bg);
+    border-collapse: separate;
+    border-radius: var(--table-border-radius);
+    border-spacing: 0;
+
+    th {
+        font-weight: $font-weight-bold;
+    }
+
+    html body .mx-page &.mx-table {
+
+        th,
+        td {
+            &.nopadding {
+                padding: 0;
+            }
+        }
+    }
+
+    &.mx-table {
+        >tbody {
+
+            /* Table row */
+            >tr {
+
+                /* Table header */
+                >th {
+                    padding: var(--padding-table-cell) var(--padding-table-cell) var(--padding-table-cell) var(--padding-table-cell);
+
+                    s * {
+                        color: $form-label-color;
+                        font-weight: $font-weight-bold;
+                        font-weight: $form-label-weight;
+                    }
+
+                    >label {
+                        padding-bottom: var(--space-s); // Aligns label in the middle if there is no input field next to it.
+                        padding-top: var(--space-s);
+                    }
+
+                    &:first-of-type{
+                        border-top-left-radius: var(--table-border-radius);
+                    }
+            
+                    &:last-of-type{
+                        border-top-right-radius: var(--table-border-radius);
+                    }
+                }
+
+                /* Table cells */
+                >td {
+                    padding: var(--padding-table-cell) var(--padding-table-cell) var(--padding-table-cell) var(--padding-table-cell);
+
+                    >div>label,
+                    .mx-referenceselector-input-wrapper label {
+                        padding-bottom: var(--space-s); // Aligns label in the middle if there is no input field next to it.
+                        padding-top: var(--space-s);
+                    }
+                }
+
+                &:last-of-type{
+                    >td {
+                        &:first-of-type{
+                            border-bottom-left-radius: var(--table-border-radius);
+                        }
+                
+                        &:last-of-type{
+                            border-bottom-right-radius: var(--table-border-radius);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mx-templategrid &.mx-table {
+        >tbody {
+            >tr {
+
+                >th,
+                >td {
+                    padding: var(--padding-table-cell) var(--padding-table-cell) var(--padding-table-cell) var(--padding-table-cell);
+                }
+            }
+        }
+    }
+
+    // Default Mendix Table Widget inside Listview
+    .mx-list &.mx-table {
+        >tbody {
+            >tr {
+
+                >th,
+                >td {
+                    padding: var(--padding-table-cell) var(--padding-table-cell) var(--padding-table-cell) var(--padding-table-cell);
+                }
+            }
+        }
+    }
+
+    // Lined
+    &.table-lined.mx-table {
+        >tbody {
+
+            // Table row
+            >tr {
+
+                // Table header
+                // Table data
+                >td {
+                    border-color: var(--#{$prefix}border-color);
+                    border-style: solid;
+                    border-width: 0 0 1px 0;
+                }
+
+                &:nth-child(2) >td {
+                    border-width: 1px 0;
+                }
+
+                &:last-of-type{
+                    >td {
+                        &:first-of-type{
+                            border-bottom-left-radius: 0;
+                        }
+                
+                        &:last-of-type{
+                            border-bottom-right-radius: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Bordered
+    &.table-bordered.mx-table {
+        >tbody {
+
+            // Table row
+            >tr {
+
+                // Table header
+                // Table data
+                >th,
+                >td {
+                    border-color: var(--#{$prefix}border-color);
+                    border-style: solid;
+                }
+
+                >th {
+                    border-width: 1px 1px 1px 0;
+                    &:first-child {
+                        border-width: 1px;
+                    }
+                }
+                >td {
+                    border-width: 0 1px 1px 0;
+                    &:first-child {
+                        border-width: 0 1px 1px 1px;
+                    }
+                }
+
+                
+            }
+        }
+    }
+
+    // Makes table compact
+    &.table-compact.mx-table {
+        > tbody {
+            // Table row
+            > tr {
+                // Table header
+                // Table data
+                > th,
+                > td {
+                    padding-bottom: var(--space-xxs);
+                    padding-top: var(--space-xxs);
+                }
+            }
+        }
+    }
+
+    // Tables Vertical
+    // Will remove unwanted paddings
+    &.table-vertical.mx-table {
+        > tbody {
+            // Table row
+            > tr {
+                // Table header
+                > th {
+                    padding-bottom: var(--space-none);
+
+                    > label {
+                        padding: var(--space-none);
+                    }
+
+                    > div > label {
+                        padding: var(--space-none);
+                    }
+                }
+            }
+        }
+    }
+
+    // Align content in middle
+    &.table-align-vertical-middle.mx-table {
+        > tbody {
+            // Table row
+            > tr {
+                // Table header
+                // Table data
+                > th,
+                > td {
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+    // Compact labels
+    &.table-label-compact.mx-table {
+        > tbody {
+            // Table row
+            > tr {
+                // Table header
+                // Table data
+                > th,
+                > td {
+                    > label {
+                        margin: var(--space-none);
+                        padding: var(--space-none);
+                    }
+
+                    > div > label,
+                    .mx-referenceselector-input-wrapper label {
+                        margin: var(--space-none);
+                        padding: var(--space-none);
+                    }
+                }
+            }
+        }
+    }
+
+    
+    // Small rows
+    &.table-row-s.mx-table {
+        > tbody {
+            // Table row
+            > tr {
+                // Table header
+                // Table data
+                > th,
+                > td {
+                    height: var(--height-row-s);
+                }
+            }
+        }
+    }
+
+    // Medium rows
+    &.table-row-m.mx-table {
+        > tbody {
+            // Table row
+            > tr {
+                // Table header
+                // Table data
+                > th,
+                > td {
+                    height: var(--height-row-m);
+                }
+            }
+        }
+    }
+
+    // Large rows
+    &.table-row-l.mx-table {
+        > tbody {
+            // Table row
+            > tr {
+                // Table header
+                // Table data
+                > th,
+                > td {
+                    height: var(--height-row-l);
+                }
+            }
+        }
+    }
+
+    // Makes the columns fixed
+    &.table-fixed {
+        table-layout: fixed;
+    }
+}

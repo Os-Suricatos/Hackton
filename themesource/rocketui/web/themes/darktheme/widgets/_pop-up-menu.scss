@@ -1,0 +1,15 @@
+@include color-mode(dark){
+    .popupmenu-menu {
+        background-color: var(--#{$prefix}secondary-bg);
+    }
+
+    .popupmenu-basic-divider {
+        background-color: var(--#{$prefix}border-color);
+    }
+
+
+    .popupmenu-basic-item {
+        color: var(--#{$prefix}body-color);
+        font-size: var(--space-base);
+    }
+}

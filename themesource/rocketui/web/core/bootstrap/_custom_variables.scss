@@ -1,0 +1,65 @@
+// Overwrite variables for Bootstrap
+
+//------------------- START: Mendix Mapping Varibles to Bootstrap -----------------------//
+$gray-100: $brand-gray-100;
+$gray-200: $brand-gray-200;
+$gray-300: $brand-gray-300;
+$gray-400: $brand-gray-400;
+$gray-500: $brand-gray-500;
+$gray-600: $brand-gray-600;
+$gray-700: $brand-gray-700;
+$gray-800: $brand-gray-800;
+$gray-900: $brand-gray-900; 
+
+
+$primary: $brand-primary;
+$secondary: $brand-secondary;
+$success: $brand-success;
+$info: $brand-info;
+$warning: $brand-warning;
+$danger: $brand-danger;
+
+$body-color: $main-font-color;
+$body-secondary-color: $secondary-font-color;
+$body-tertiary-color: $tertiary-font-color;
+
+$font-size-root: $main-font-size;
+
+$border-color: $main-border-color;
+
+$body-bg: $body-background;
+$body-secondary-bg: $body-secondary-background;
+
+$link-color: $link-color;
+$link-hover-color: $link-hover-color;
+
+//$font-size-lg: $font-size-large;
+//$font-size-sm: $font-size-small;
+
+$h1-font-size: #{$font-size-h1};
+$h2-font-size: #{$font-size-h2};
+$h3-font-size: #{$font-size-h3};
+$h4-font-size: #{$font-size-h4};
+$h5-font-size: #{$font-size-h5};
+$h6-font-size: #{$font-size-h6};
+
+// $headings-color: $header-text-color;
+$headings-font-weight: $font-weight-header;
+$headings-margin-bottom: $font-header-margin;
+
+//Skipped nab-sub, navsidebar and nvatopbar
+$box-shadow: $shadow-medium;
+$box-shadow-sm: $shadow-small;
+$box-shadow-lg: $shadow-large;
+
+// Btns
+$btn-font-size: $btn-font-size;
+$btn-border-radius: $btn-border-radius;
+
+//------------------- END: Mendix Mapping Varibles to Bootstrap -----------------------//
+
+
+//Mendix var Overwrite
+$important-spacing: false;
+// $enable-rfs: false;
+$enable-important-utilities: false;

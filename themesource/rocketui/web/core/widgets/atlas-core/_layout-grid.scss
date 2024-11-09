@@ -1,0 +1,26 @@
+// Bootstrap
+// @import '../bootstrap/scss/containers';
+// @import '../bootstrap/scss/grid';
+
+// Atlas
+@import "../../../../../atlas_core/web/core/widgets/layout-grid";
+
+@include layout-grid();
+
+//Customizations
+.mx-layoutgrid {
+    padding-left: var(--gutter-size);
+    padding-right: var(--gutter-size);
+}
+
+// Row
+.row {
+    margin-left: calc(var(--gutter-size) * -1);
+    margin-right: calc(var(--gutter-size) * -1);
+}
+
+@media (min-width: 1500px) {
+    .mx-layoutgrid-fixed {
+        max-width: 1440px;
+    }
+}

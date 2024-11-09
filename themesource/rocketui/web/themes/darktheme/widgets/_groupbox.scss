@@ -1,0 +1,69 @@
+@include color-mode(dark) {
+    .groupbox-primary {
+        @include groupbox-variant($groupbox-primary-color, var(--#{$prefix}primary));
+    }
+
+    .groupbox-transparent {
+        >.mx-groupbox-header {
+            color: var(--#{$prefix}light);
+        }
+    }
+
+    .mx-groupbox>.mx-groupbox-body {
+        background-color: var(--#{$prefix}secondary-bg);
+    }
+
+    // Callout Look and Feel
+    .groupbox-callout {
+
+        >.mx-groupbox-header,
+        >.mx-groupbox-body {
+            // color: black;
+            background-color: var(--#{$prefix}primary);
+            color: $color-primary-darker;
+        }
+
+        >.mx-groupbox-header {
+            color: $color-primary-darker;
+        }
+    }
+
+    .groupbox-success.groupbox-callout {
+
+        >.mx-groupbox-header,
+        >.mx-groupbox-body {
+            background-color: $color-success-lighter;
+            color: $color-success-darker;
+        }
+
+        >.mx-groupbox-header {
+            color: $color-success-darker;
+        }
+    }
+
+    .groupbox-warning.groupbox-callout {
+
+        >.mx-groupbox-header,
+        >.mx-groupbox-body {
+            background-color: $color-warning-lighter;
+            color: $color-warning-darker;
+        }
+
+        >.mx-groupbox-header {
+            color: $color-warning-darker;
+        }
+    }
+
+    .groupbox-danger.groupbox-callout {
+
+        >.mx-groupbox-header,
+        >.mx-groupbox-body {
+            background-color: $color-danger-lighter;
+            color: $color-danger-darker;
+        }
+
+        >.mx-groupbox-header {
+            color: $color-danger-darker;
+        }
+    }
+}

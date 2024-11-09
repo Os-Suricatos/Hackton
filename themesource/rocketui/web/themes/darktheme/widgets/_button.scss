@@ -1,0 +1,89 @@
+@include color-mode(dark){
+    // .btn-secondary,
+    // .btn-default {
+
+    //     &.btn-bordered {
+    //         border-color: #fff;
+    //         color: #fff;
+
+    //         .badge {
+    //             background-color: #fff;
+    //             color: var(--#{$prefix}primary);
+    //         }
+
+    //         &:hover,
+    //         &:active,
+    //         &:focus {
+    //             background-color: #fff;
+    //             border-color: var(--#{$prefix}primary);
+    //             color:var(--#{$prefix}primary);
+
+    //             .badge {
+    //                 background-color: var(--#{$prefix}primary);
+    //                 color: #fff;
+    //             }
+    //         }
+    //     }
+    // }
+
+    .btn,
+    .mx-button, 
+    .btn-secondary,
+    .btn-secondary.btn-bordered,
+    .btn-outline-secondary,  
+    .btn-default{
+        @include button-outline-variant(
+            $background: var(--#{$prefix}secondary-bg),
+            $color: var(--#{$prefix}primary),
+        )
+    }
+
+    @each $color, $value in $theme-colors {
+        @if $color != 'secondary'{
+            .btn-#{$color} {
+                @include button-variant($background: var(--#{$prefix}#{$color}))
+            }
+        }
+    }
+    
+    @each $color, $value in $theme-colors {
+        @if $color != 'secondary'{
+            .btn-#{$color}.btn-bordered,
+            .btn-outline-#{$color} {
+                @include button-outline-variant(
+                    $color: var(--#{$prefix}#{$color}),
+                    $background: var(--#{$prefix}secondary-bg)
+                );
+            }
+        }
+    }
+
+    // .btn-plain {
+    //     --table-hover-bg: #{$table-hover-bg};
+    //     border: none;
+    //     color: var(--bs-gray-400);
+
+    //     &:hover,
+    //     &:active,
+    //     &:focus {
+    //         background-color: var(--table-hover-bg);
+    //         border-color: transparent;
+    //         color: var(--bs-gray-400);
+    //     }
+    // }
+
+    // .btn-cancel {
+    //     --table-hover-bg: #{$table-hover-bg};
+    //     border-color: var(--bs-gray-400);
+    //     color: var(--bs-gray-400);
+
+    //     &:hover,
+    //     &:active,
+    //     &:focus {
+    //         color: var(--bs-gray-400);
+    //         border-color: var(--bs-gray-400);
+    //         background-color: var(--table-hover-bg);
+    //     }
+    // }
+
+}

@@ -1,0 +1,16 @@
+// Bootstrap
+//no formblock
+
+// Atlas
+@import "../../../../../atlas_web_content/web/buildingblocks/formblock";
+
+//Customizations
+
+/* ==========================================================================
+   Form Block
+
+   Used in default forms
+========================================================================== */
+.formblock {
+    margin-bottom: var(--space-m);
+}

@@ -1,0 +1,309 @@
+// Bootstrap
+// @import '../bootstrap/scss/buttons';
+@import '../../bootstrap/scss/close';
+
+// Atlas
+// @import '../../atlas_core/web/core/widgets/button';
+// @import '../../atlas_core/web/core/helpers/button';
+
+// @include button();
+// @include button-helpers();
+
+.btn,
+.mx-button {
+    @include button-variant(
+        $color: var(--#{$prefix}white),
+        $background: var(--#{$prefix}primary)
+    );
+
+    //Disables Colors
+    --btn-disabled-color: var(--#{$prefix}gray-500);
+    --btn-disabled-background: var(--#{$prefix}gray-200);
+    --btn-disabled-border-color: var(--#{$prefix}gray-300);
+
+    --btn-focus-outline-width: var(--#{$prefix}focus-ring-width);
+    --btn-focus-outline-color: var(--#{$prefix}focus-ring-color);
+
+    --btn-padding-x: var(--space-base);
+    --btn-padding-y: var(--space-s);
+    --btn-border-radius: var(--#{$prefix}border-radius);
+    align-items: center;
+
+    background-color: var(--btn-background);
+    background-image: none;
+    border: 1px solid var(--btn-border-color);
+    border-radius: var(--btn-border-radius);
+    box-shadow: none;
+    color: var(--btn-color);
+    cursor: pointer;
+
+
+    display: inline-flex;
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    gap: var(--space-s);
+    line-height: 21px;
+    margin-bottom: 0;
+    min-height: 40px;
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    text-align: center;
+    text-shadow: none;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:hover
+    &:focus,
+    &:active,
+    &:active:focus {
+        box-shadow: none;
+        outline: none;
+    }
+
+    &:hover{
+        background-color: var(--btn-hover-background);
+        border-color: var(--btn-hover-border-color);
+        color: var(--btn-hover-color);
+    }
+
+    &:focus{
+        background-color: var(--btn-focus-background);
+        border-color: var(--btn-focus-border-color);
+        color: var(--btn-focus-color);
+        outline: var(--btn-focus-outline-width) solid var(--btn-focus-outline-color);
+    }
+    
+    &:active,
+    &:active:focus{
+        background-color: var(--btn-pressed-background);
+        border-color: var(--btn-pressed-border-color);
+        color: var(--btn-pressed-color);
+    }
+
+
+
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        background-image: none;
+    }
+
+    &[aria-disabled] {
+        cursor: not-allowed;
+        // opacity: 0.65;
+        pointer-events: none;
+    }
+
+    .glyphicon{
+        top:0
+    }
+
+    &.disabled,
+    &[disabled],
+    &[aria-disabled],
+    fieldset[disabled] {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: var(--btn-disabled-background);
+            border-color: var(--btn-disabled-border-color);
+            color: var(--btn-disabled-color);
+            outline: 0;
+        }
+    }
+}
+
+// Mendix button link
+.mx-link {
+    color: var(--#{$prefix}primary);
+    padding: 0;
+
+    &[aria-disabled="true"] {
+        cursor: not-allowed;
+        // opacity: 0.65;
+        pointer-events: none;
+    }
+}
+
+.link-back {
+    color: var(--#{$prefix}primary);
+
+    .glyphicon,
+    .mx-icon-lined,
+    .mx-icon-filled {
+        top: 2px;
+    }
+}
+
+// Images and icons in buttons
+.btn,
+.mx-button,
+.mx-link {
+    img {
+        //height: auto; // MXUI override who set the height on 16px default
+        height: calc(var(--#{$prefix}body-font-size) + 4px);
+        margin-right: 4px;
+        vertical-align: text-top;
+    }
+}
+
+//== Phone specific
+//-------------------------------------------------------------------------------------------------------------------//
+.profile-phone {
+    .btn,
+    .mx-link {
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+}
+
+.btn,
+.mx-button, 
+.btn-secondary,
+.btn-secondary.btn-bordered,
+.btn-outline-secondary,  
+.btn-default{
+    @include button-outline-variant(var(--#{$prefix}primary));
+}
+
+
+// variation
+@each $color, $value in $theme-colors {
+    @if $color != 'secondary'{
+        .btn-#{$color} {
+            @include button-variant($background: var(--#{$prefix}#{$color}))
+        }
+    }
+}
+
+@each $color, $value in $theme-colors {
+    @if $color != 'secondary'{
+        .btn-#{$color}.btn-bordered,
+        .btn-outline-#{$color} {
+            @include button-outline-variant(var(--#{$prefix}#{$color}));
+        }
+    }
+}
+
+.btn-link{
+    background-color: transparent;
+    color: var(--btn-background);
+    text-decoration: none;
+}
+
+
+
+// Button Image
+.btn{
+    &-image {
+        background-color: transparent;
+        border-style: none;
+        padding: 0;
+        vertical-align: middle;
+
+        img {
+            display: block; // or else the button doesn't get a width
+            height: auto; // Image set height
+        }
+
+        &:hover,
+        &:focus {
+            background-color: transparent;
+        }
+    }
+    // Icon buttons
+    &-icon {
+        & > img,
+        & > .glyphicon,
+        & > .mx-icon-lined,
+        & > .mx-icon-filled {
+            margin: 0;
+        }
+
+        &-right {
+            // align-items: center;
+            // display: inline-flex;
+            flex-direction: row-reverse;
+        
+            & > img,
+            & > .glyphicon,
+            & > .mx-icon-lined,
+            & > .mx-icon-filled {
+                margin-left: var(--space-xs);
+                top: 0;
+            }
+        }
+        
+        &-top {
+            padding-left: 0;
+            padding-right: 0;
+        
+            & > img,
+            & > .glyphicon,
+            & > .mx-icon-lined,
+            & > .mx-icon-filled {
+                display: block;
+                margin: 0 0 var(--space-xs) 0;
+            }
+        }
+        
+        &-only {
+            --btn-padding-x: var(--space-s);
+            --btn-padding-y: var(--space-s);
+            aspect-ratio: 1;
+            // border: none;
+            // padding: 0;
+            justify-content: center;
+        }
+    }
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    
+    + .btn-block {
+        margin-top: var(--space-xs);
+    }
+}
+
+
+// Rever
+.btn-lg {
+    // --btn-padding-x: var(--space-m);
+    --btn-padding-y: var(--space-base);
+
+    img {
+        height: calc(#{$font-size-small} + 4px);
+    }
+
+    &.btn-icon-only{
+        --btn-padding-x: var(--space-s);
+        --btn-padding-y: var(--space-s);
+        width: 48px;
+    }
+}
+
+.btn-sm {
+    // --btn-padding-x: var(--space-s);
+    --btn-padding-y: var(--space-xs);
+    min-height: 32px;
+
+    img {
+        height: calc(#{$font-size-small} + 4px);
+    }
+
+    &.btn-icon-only{
+        --btn-padding-x: var(--space-xs);
+        --btn-padding-y: var(--space-xs);
+    }
+}
+
+button.close{
+    @extend .btn-close;
+}

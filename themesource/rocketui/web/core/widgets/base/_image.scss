@@ -1,0 +1,27 @@
+// Bootstrap
+@import '../../bootstrap/scss/images';
+
+// Atlas
+@import '../../../../../atlas_core/web/core/helpers/image';
+
+@include image-helpers();
+
+//Customizations
+img.img-rounded,
+.img-rounded img {
+    border-radius: var(--#{$prefix}border-radius);
+}
+
+img.img-thumbnail,
+.img-thumbnail img {
+    border: 1px solid var(--#{$prefix}secondary);
+}
+
+.img-responsive,
+.thumbnail>img, .thumbnail a>img,
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

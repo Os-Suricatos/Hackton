@@ -1,0 +1,775 @@
+// Bootstrap
+// @import '../../bootstrap/scss/nav';
+// @import '../../bootstrap/scss/navbar';
+
+// Atlas
+// @import '../../../../../atlas_core/web/core/widgets/navigation-bar';
+// @import '../../../../../atlas_core/web/core/helpers/navigation-bar';
+
+// @include navigation-bar();
+// @include navigation-bar-helpers();
+
+//Customizations
+
+
+/* --------- Custom Navigation Bar Widget Override --------- */
+.nav {
+    list-style: none;
+    margin-bottom: var(--space-none);
+    padding-left: var(--space-none);
+
+    &>li>a {
+        display: block;
+        padding: var(--space-s) var(--space-base);
+        position: relative;
+    }
+}
+
+.mx-navbar .navbar-nav,
+.mx-navbar .navbar-nav>li {
+    float: unset;
+}
+
+.mx-navbar .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* --------- END Custom Overrides --------- */
+
+/* --------- Navigation Bar Widget Override --------- */
+.mx-navbar {
+    --navbar-bg-color: var(--#{$prefix}primary);
+    
+    --navbar-items-padding-x: var(--space-s);
+    --navbar-items-padding-y: var(--space-s);
+
+    --navbar-items-color: var(--#{$prefix}white);
+    --navbar-items-border-radius: var(--#{$prefix}border-radius);
+    --navbar-items-font-size: var(--font-size-s);
+    --navbar-items-font-weight: var(--font-regular);
+
+    --navbar-items-hover-color: var(--#{$prefix}white);
+    --navbar-items-hover-bg: var(--#{$prefix}primary-light);
+    --navbar-items-active-color: var(--#{$prefix}white);
+    --navbar-items-active-bg: var(--#{$prefix}primary-light);
+
+    --navbar-dropdown-bg: var(--#{$prefix}white);
+    --navbar-dropdown-padding: var(--space-s) var(--space-none);
+    --navbar-dropdown-margin: var(--space-xs) var(--space-none) var(--space-none);
+    --navbar-dropdown-divider-color:var(--#{$prefix}gray-200);
+    --navbar-dropdown-border-color: rgba(0, 0, 0, 0.15);
+    --navbar-dropdown-border-radius: var(--#{$prefix}border-radius); 
+    --navbar-dropdown-shadow: var(--#{$prefix}box-shadow-lg);
+
+
+    --navbar-subitems-padding-x: var(--space-m);
+    --navbar-subitems-padding-y: var(--space-xs);
+
+    --navbar-subitems-color: var(--bs-tertiary-color);
+    --navbar-subitems-font-size: var(--navbar-items-font-size);
+    --navbar-subitems-font-weight: var(--navbar-items-font-weight);
+
+    --navbar-subitems-hover-color: var(--bs-tertiary-color);
+    --navbar-subitems-hover-bg: rgba(0, 0, 0, 0.05);
+    --navbar-subitems-active-color: var(--navbar-items-active-color);
+    --navbar-subitems-active-bg: var(--navbar-subitems-hover-bg);
+
+    --navbar-subitems-disabled-color: var(--#{$prefix}gray-600);
+    background-color: var(--navbar-bg-color);
+    border-radius: 0;
+    border-style: none;
+
+
+    margin: var(--space-none);
+
+    ul.nav {
+        margin: var(--space-none); // weird -margin if screen gets small (bootstrap)
+
+        /* Navigation item */
+        &>li.mx-navbar-item>a {
+            align-items: center;
+            border-radius: var(--navbar-items-border-radius);
+            color: var(--navbar-items-color);
+            display: flex;
+            font-size: var(--navbar-items-font-size);
+            font-weight: var(--navbar-items-font-weight);
+            padding: var(--navbar-items-padding-y) var(--navbar-items-padding-x);
+            vertical-align: middle;
+
+            /* Dropdown arrow */
+            .caret {
+                border-bottom-color: var(--navbar-items-color);
+                border-top-color: var(--navbar-items-color);
+                margin-left: var(--space-s)
+            }
+
+            &:hover,
+            &:focus,
+            &.active {
+                background-color: var(--navbar-items-hover-bg);
+                color: var(--navbar-items-hover-color);
+                text-decoration: none;
+
+                .caret {
+                    border-bottom-color: var(--navbar-items-hover-color);
+                    border-top-color: var(--navbar-items-hover-color);
+                    transform: rotate(0deg);
+                    transition: rotate 200ms ease-in-out;
+                    will-change: rotate;
+                }
+            }
+
+            &.active {
+                background-color: var(--navbar-items-active-bg);
+                color: var(--navbar-items-active-color);
+                opacity: 1;
+            }
+
+            /* Dropdown */
+            .mx-navbar-submenu::before {
+                border-color: transparent transparent $navigation-border-color transparent;
+                border-style: solid;
+                border-width: 0 var(--space-s) var(--space-s) var(--space-s);
+                content: "";
+                height: 0;
+                left: var(--space-base);
+                position: absolute;
+                top: calc(-1*var(--space-s));
+                transform: rotate(360deg);
+                width: 0;
+            }
+
+            // Image
+            img {
+                height: auto;
+                margin-right: var(--space-s);
+                width: var(--space-base);
+            }
+
+            .glyphicon,
+            .mx-icon-lined,
+            .mx-icon-filled {
+                font-size: var(--font-size-h5);
+                margin-right: var(--space-s);
+                top: 0;
+                vertical-align: middle;
+            }
+        }
+
+        &>.mx-navbar-item.active a {
+            color: var(--navbar-items-active-color);
+        }
+
+        /* When hovering or the dropdown is open */
+        &>.mx-navbar-item>a:hover,
+        &>.mx-navbar-item>a:focus,
+        &>.mx-navbar-item.open>a,
+        &>.mx-navbar-item.open>a:hover,
+        &>.mx-navbar-item.open>a:focus {
+            background-color: var(--navbar-items-hover-bg);
+            color: var(--navbar-items-hover-color);
+            text-decoration: none;
+
+            .caret {
+                border-bottom-color: var(--navbar-items-hover-color);
+                border-top-color: var(--navbar-items-hover-color);
+            }
+        }
+
+        &>.mx-navbar-item.open .dropdown-menu>li.mx-navbar-subitem.active a {
+            background-color: var(--navbar-subitems-active-bg);
+            color: var(--navbar-subitems-active-color);
+
+            .caret {
+                border-bottom-color: var(--navbar-subitems-active-color);
+                border-top-color: var(--navbar-subitems-active-color);
+            }
+        }
+
+        &>.mx-navbar-item.open .dropdown-menu>li.mx-navbar-subitem a {
+            font-size: var(--navbar-subitems-font-size);
+        }
+
+
+    }
+
+    @media (max-width: $screen-md) {
+        ul.nav>li.mx-navbar-item>a {
+            padding: var(--space-s) var(--space-m);
+        }
+
+        .mx-navbar-item.open .dropdown-menu {
+            background-color: var(--navbar-dropdown-bg);
+            border-radius: 0;
+            padding: 0;
+
+            &>li.mx-navbar-subitem>a {
+                border-radius: 0;
+                color: var(--navbar-subitems-color);
+                font-size: var(--navbar-subitems-font-size);
+                font-weight: var(--navbar-subitems-font-weight);
+                padding: var(--space-s) var(--space-m);
+
+                &:hover,
+                &:focus {
+                    background-color: var(--navbar-subitems-hover-bg);
+                    color: var(--navbar-subitems-hover-color);
+                }
+
+                &.active {
+                    background-color: var(--navbar-subitems-active-bg);
+                    color: var(--navbar-subitems-active-color);
+                }
+            }
+        }
+    }
+
+    /* remove focus */
+    &:focus {
+        outline: 0;
+    }
+
+
+}
+
+.hide-icons.mx-navbar {
+
+    .glyphicon,
+    .mx-icon-lined,
+    .mx-icon-filled {
+        display: none;
+    }
+}
+
+/* --------- Navigation Bar and Menu Bar Widgets's Dropdown Override --------- */
+.dropup,
+.dropdown {
+    position: relative;
+}
+
+.dropdown {
+    &-toggle:focus {
+        outline: 0;
+    }
+
+    &-menu {
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        background-color: var(--navbar-dropdown-bg);
+        border: 1px solid var(--navbar-dropdown-border-color);
+        border-radius: var(--navbar-dropdown-border-radius);
+        -webkit-box-shadow: var(--navbar-dropdown-shadow);
+        box-shadow: var(--navbar-dropdown-shadow);
+        display: none;
+        float: left;
+        font-size: var(--navbar-subitems-font-size);
+        left: 0;
+        list-style: none;
+        margin: var(--navbar-dropdown-margin);
+        min-width: 160px;
+        padding: var(--navbar-dropdown-padding);
+        position: absolute;
+        text-align: left;
+        top: 100%;
+        z-index: 1000;
+
+        &.pull-right {
+            left: auto;
+            right: 0;
+        }
+
+        .divider {
+            background-color: var(--navbar-dropdown-divider-color);
+            height: 1px;
+            margin: var(--space-s) var(--space-none);
+            overflow: hidden;
+        }
+
+        >li>a {
+            clear: both;
+            color: var(--navbar-subitems-color);
+            display: block;
+            font-weight: normal;
+            line-height: 1.42857143;
+            padding: var(--navbar-subitems-padding-y) var(--navbar-subitems-padding-x);
+            white-space: nowrap;
+
+            &:hover,
+            &:focus {
+                background-color: var(--navbar-subitems-hover-bg);
+                color: var(--navbar-subitems-hover-color);
+                text-decoration: none;
+            }
+        }
+
+        >.active>a,
+        >.active>a:hover,
+        >.active>a:focus {
+            background-color: var(--navbar-subitems-active-bg);
+            color: var(--navbar-subitems-active-color);
+            outline: 0;
+            text-decoration: none;
+        }
+
+        >.disabled>a,
+        >.disabled>a:hover,
+        >.disabled>a:focus {
+            color: var(--navbar-subitems-disabled-color);
+        }
+
+        >.disabled>a:hover,
+        >.disabled>a:focus {
+            background-color: transparent;
+            background-image: none;
+            cursor: not-allowed;
+            filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+            text-decoration: none;
+        }
+
+        .open>& {
+            display: block;
+        }
+
+        &-right {
+            left: auto;
+            right: 0;
+        }
+
+        &-left {
+            left: 0;
+            right: auto;
+        }
+
+        .pull-right>& {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    &-header {
+        color: var(--#{$prefix}gray-600);
+        display: block;
+        font-size: var(--font-size-xs);
+        line-height: 1.42857143;
+        padding: var(--space-xxs) var(--space-base);
+        white-space: nowrap;
+    }
+
+    &-backdrop {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 990;
+    }
+}
+
+.open > a {
+    outline: 0;
+
+    .caret{
+        rotate: 180deg;
+    }
+}
+
+
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+    border-bottom: var(--space-xs) solid;
+    border-top: 0;
+    content: "";
+}
+
+.dropup .dropdown-menu,
+.navbar-fixed-bottom .dropdown .dropdown-menu {
+    bottom: 100%;
+    margin-bottom: var(--space-xxs);
+    top: auto;
+}
+
+
+@media (min-width: 768px) {
+    .navbar-right .dropdown-menu {
+        left: auto;
+        right: 0;
+    }
+
+    .navbar-right .dropdown-menu-left {
+        left: 0;
+        right: auto;
+    }
+}
+
+
+
+
+// // Bootstrap
+// // @import '../../bootstrap/scss/nav';
+// // @import '../../bootstrap/scss/navbar';
+
+// // Atlas
+// // @import '../../../../../atlas_core/web/core/widgets/navigation-bar';
+// // @import '../../../../../atlas_core/web/core/helpers/navigation-bar';
+
+// // @include navigation-bar();
+// // @include navigation-bar-helpers();
+
+// //Customizations
+
+
+// /* --------- Custom Navigation Bar Widget Override --------- */
+// .nav {
+//     padding-left: var(--space-none);
+//     margin-bottom: var(--space-none);
+//     list-style: none;
+
+//     &>li>a {
+//         position: relative;
+//         display: block;
+//         padding: var(--space-s) var(--space-base);
+//     }
+// }
+
+// .mx-navbar .navbar-nav,
+// .mx-navbar .navbar-nav>li {
+//     float: unset;
+// }
+
+// .mx-navbar .navbar-nav {
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+
+// /* --------- END Custom Overrides --------- */
+
+// /* --------- Navigation Bar Widget Override --------- */
+// .mx-navbar {
+//     margin: var(--space-none);
+//     border-style: none;
+//     border-radius: 0;
+//     background-color: var(--#{$prefix}primary);
+
+//     ul.nav {
+//         margin: var(--space-none); // weird -margin if screen gets small (bootstrap)
+
+//         /* Navigation item */
+//         &>li.mx-navbar-item>a {
+//             display: flex;
+//             align-items: center;
+//             padding: var(--space-s);
+//             vertical-align: middle;
+//             color: var(--#{$prefix}white);
+//             border-radius: 0;
+//             font-size: var(--font-size-s);
+//             font-weight: $font-weight-normal;
+//             border-radius: var(--#{$prefix}border-radius);
+
+//             /* Dropdown arrow */
+//             .caret {
+//                 border-top-color: var(--#{$prefix}white);
+//                 border-bottom-color: var(--#{$prefix}white);
+//             }
+
+//             &:hover,
+//             &:focus,
+//             &.active {
+//                 text-decoration: none;
+//                 color: var(--#{$prefix}white);
+//                 background-color: var(--#{$prefix}primary-light);
+
+//                 .caret {
+//                     border-top-color: var(--#{$prefix}white);
+//                     border-bottom-color: var(--#{$prefix}white);
+//                 }
+//             }
+
+//             &.active {
+//                 color: var(--#{$prefix}white);
+//                 background-color: $navigation-bg-active;
+//                 opacity: 1;
+//             }
+
+//             /* Dropdown */
+//             .mx-navbar-submenu::before {
+//                 position: absolute;
+//                 top: calc(-1*var(--space-s));
+//                 left: var(--space-base);
+//                 width: 0;
+//                 height: 0;
+//                 content: "";
+//                 transform: rotate(360deg);
+//                 border-width: 0 var(--space-s) var(--space-s) var(--space-s);
+//                 border-style: solid;
+//                 border-color: transparent transparent $navigation-border-color transparent;
+//             }
+
+//             // Image
+//             img {
+//                 width: var(--space-base);
+//                 height: auto;
+//                 margin-right: var(--space-s);
+//             }
+
+//             .glyphicon,
+//             .mx-icon-lined,
+//             .mx-icon-filled {
+//                 top: 0;
+//                 margin-right: var(--space-s);
+//                 vertical-align: middle;
+//                 font-size: var(--font-size-h5);
+//             }
+//         }
+
+//         &>.mx-navbar-item.active a {
+//             color: var(--#{$prefix}white);
+//         }
+
+//         /* When hovering or the dropdown is open */
+//         &>.mx-navbar-item>a:hover,
+//         &>.mx-navbar-item>a:focus,
+//         &>.mx-navbar-item.open>a,
+//         &>.mx-navbar-item.open>a:hover,
+//         &>.mx-navbar-item.open>a:focus {
+//             text-decoration: none;
+//             color: var(--#{$prefix}white);
+//             background-color: var(--#{$prefix}primary-light);
+
+//             .caret {
+//                 border-top-color: var(--#{$prefix}white);
+//                 border-bottom-color: var(--#{$prefix}white);
+//             }
+//         }
+
+//         &>.mx-navbar-item.open .dropdown-menu>li.mx-navbar-subitem.active a {
+//             color: var(--#{$prefix}primary);
+//             background-color: $navigation-sub-bg-active;
+
+//             .caret {
+//                 border-top-color: var(--#{$prefix}primary);
+//                 border-bottom-color: var(--#{$prefix}primary);
+//             }
+//         }
+
+//         &>.mx-navbar-item.open .dropdown-menu>li.mx-navbar-subitem a {
+//             font-size: var(--font-size-s);
+//         }
+
+
+//     }
+
+//     @media (max-width: $screen-md) {
+//         ul.nav>li.mx-navbar-item>a {
+//             padding: var(--space-s) var(--space-m);
+//         }
+
+//         .mx-navbar-item.open .dropdown-menu {
+//             padding: 0;
+//             border-radius: 0;
+//             background-color: $navigation-sub-bg;
+
+//             &>li.mx-navbar-subitem>a {
+//                 padding: var(--space-s) var(--space-m);
+//                 color:var(--#{$prefix}gray-500);
+//                 border-radius: 0;
+//                 font-size: var(--font-size-xs);
+//                 font-weight: $font-weight-normal;
+
+//                 &:hover,
+//                 &:focus {
+//                     color: var(--#{$prefix}primary);
+//                     background-color: $navigation-sub-bg-hover;
+//                 }
+
+//                 &.active {
+//                     color: var(--#{$prefix}primary);
+//                     background-color: $navigation-sub-bg-active;
+//                 }
+//             }
+//         }
+//     }
+
+//     /* remove focus */
+//     &:focus {
+//         outline: 0;
+//     }
+
+
+// }
+
+// .hide-icons.mx-navbar {
+
+//     .glyphicon,
+//     .mx-icon-lined,
+//     .mx-icon-filled {
+//         display: none;
+//     }
+// }
+
+// /* --------- Navigation Bar and Menu Bar Widgets's Dropdown Override --------- */
+// .dropup,
+// .dropdown {
+//     position: relative;
+// }
+
+// .dropdown {
+//     &-toggle:focus {
+//         outline: 0;
+//     }
+
+//     &-menu {
+//         position: absolute;
+//         top: 100%;
+//         left: 0;
+//         z-index: 1000;
+//         display: none;
+//         float: left;
+//         min-width: 160px;
+//         padding: var(--space-s) var(--space-none);
+//         margin: var(--space-xxs) var(--space-none) var(--space-none);
+//         font-size: var(--font-size-s);
+//         text-align: left;
+//         list-style: none;
+//         background-color: var(--#{$prefix}secondary-bg);
+//         -webkit-background-clip: padding-box;
+//         background-clip: padding-box;
+//         border: 1px solid var(--#{$prefix}gray-400);
+//         border: 1px solid rgba(0, 0, 0, 0.15);
+//         border-radius: var(--#{$prefix}border-radius-sm);
+//         -webkit-box-shadow: var(--#{$prefix}box-shadow-lg);
+//         box-shadow: var(--#{$prefix}box-shadow-lg);
+
+//         &.pull-right {
+//             right: 0;
+//             left: auto;
+//         }
+
+//         .divider {
+//             height: 1px;
+//             margin: var(--space-s) var(--space-none);
+//             overflow: hidden;
+//             background-color: var(--#{$prefix}gray-200);
+//         }
+
+//         >li>a {
+//             display: block;
+//             padding: var(--space-xs) var(--space-m);
+//             clear: both;
+//             font-weight: normal;
+//             line-height: 1.42857143;
+//             color: var(--bs-tertiary-color);
+//             white-space: nowrap;
+
+//             .layout-atlas-responsive-topbar & {
+
+//                 &:hover,
+//                 &:focus {
+//                     color: var(--#{$prefix}tertiary-color);
+//                     text-decoration: none;
+//                     background-color: rgba(0, 0, 0, 0.05);
+//                 }
+//             }
+
+//             &:hover,
+//             &:focus {
+//                 color: var(--#{$prefix}tertiary-color);
+//                 text-decoration: none;
+//                 background-color: var(--sidebar-bg-hover);
+//             }
+//         }
+
+//         >.active>a,
+//         >.active>a:hover,
+//         >.active>a:focus {
+//             color: var(--#{$prefix}white);
+//             text-decoration: none;
+//             background-color: var(--#{$prefix}info);
+//             outline: 0;
+//         }
+
+//         >.disabled>a,
+//         >.disabled>a:hover,
+//         >.disabled>a:focus {
+//             color: var(--#{$prefix}gray-600);
+//         }
+
+//         >.disabled>a:hover,
+//         >.disabled>a:focus {
+//             text-decoration: none;
+//             cursor: not-allowed;
+//             background-color: transparent;
+//             background-image: none;
+//             filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+//         }
+
+//         .open>& {
+//             display: block;
+//         }
+
+//         &-right {
+//             right: 0;
+//             left: auto;
+//         }
+
+//         &-left {
+//             right: auto;
+//             left: 0;
+//         }
+
+//         .pull-right>& {
+//             right: 0;
+//             left: auto;
+//         }
+//     }
+
+//     &-header {
+//         display: block;
+//         padding: var(--space-xxs) var(--space-base);
+//         font-size: var(--font-size-xs);
+//         line-height: 1.42857143;
+//         color: var(--#{$prefix}gray-600);
+//         white-space: nowrap;
+//     }
+
+//     &-backdrop {
+//         position: fixed;
+//         top: 0;
+//         right: 0;
+//         bottom: 0;
+//         left: 0;
+//         z-index: 990;
+//     }
+// }
+
+// .open>a {
+//     outline: 0;
+// }
+
+
+// .dropup .caret,
+// .navbar-fixed-bottom .dropdown .caret {
+//     content: "";
+//     border-top: 0;
+//     border-bottom: var(--space-xs) solid;
+// }
+
+// .dropup .dropdown-menu,
+// .navbar-fixed-bottom .dropdown .dropdown-menu {
+//     top: auto;
+//     bottom: 100%;
+//     margin-bottom: var(--space-xxs);
+// }
+
+
+// @media (min-width: 768px) {
+//     .navbar-right .dropdown-menu {
+//         right: 0;
+//         left: auto;
+//     }
+
+//     .navbar-right .dropdown-menu-left {
+//         right: auto;
+//         left: 0;
+//     }
+// }

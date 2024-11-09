@@ -1,0 +1,9 @@
+// Bootstrap
+// no barcode-scanner
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/barcode-scanner';
+
+@include barcode-scanner();
+
+//Customizations

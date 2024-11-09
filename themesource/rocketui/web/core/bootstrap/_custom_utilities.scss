@@ -1,0 +1,27 @@
+// Overwrite utilities for Bootstrap
+$utilities: map-merge(
+  $utilities,
+  (
+    "background-color": map-remove(map-get(map-get($utilities, "background-color"), "values")),
+    "border-color": map-remove(map-get(map-get($utilities, "border-color"), "values")),
+    "color": map-remove(map-get(map-get($utilities, "color"), "values")),
+    "link-underline": map-remove(map-get(map-get($utilities, "link-underline"), "values")),
+    "border-opacity": map-remove(map-get(map-get($utilities, "border-opacity"), "values")),
+    "text-opacity": map-remove(map-get(map-get($utilities, "text-opacity"), "values")),
+    "bg-opacity": map-remove(map-get(map-get($utilities, "bg-opacity"), "values")),
+    "link-underline-opacity": map-remove(map-get(map-get($utilities, "link-underline-opacity"), "values")),
+    "link-opacity": map-remove(map-get(map-get($utilities, "link-opacity"), "values")),
+    "subtle-background-color": (class: background),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "cursor": (
+      property: font-size,
+      class: font-size,
+      values: $font-sizes,
+    ),
+  )
+);

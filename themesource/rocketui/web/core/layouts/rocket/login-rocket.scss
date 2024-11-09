@@ -1,0 +1,107 @@
+.login-screen {
+    align-items: center;
+    background-color: var(--bs-primary);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+
+    &-bg {
+        left: 0;
+        position: absolute;
+        top: 0;
+
+        img {
+            height: 100vh;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    .login-logo {
+        text-align: center;
+
+        .application-name {
+            align-items: center;
+            color: var(--bs-primary);
+            display: flex;
+            justify-content: center;
+
+            .app-name {
+                font-size: var(--font-size-h2);
+                font-weight: var(--font-bold);
+            }
+
+            .app-logo {
+                height: 34px;
+                margin-right: var(--space-s);
+                max-height: var(--header-size);
+                width: 34px;
+
+                svg {
+                    max-height: 100%;
+                    max-width: 100%;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .login-button {
+        border-radius: var(--#{$prefix}border-radius-pill);
+    }
+
+    .login-form {
+        background-color: var(--bs-secondary-bg);
+        border-radius: var(--bs-border-radius-xl);
+        box-shadow: var(--bs-box-shadow-lg);
+        flex: 0;
+        min-width: 435px;
+        padding: var(--space-xl);
+        z-index: 1;
+    }
+
+    .login-subtitle {
+        color: var(--bs-emphasis-color);
+        font-size: var(--font-size-h5);
+        font-weight: var(--font-semi-bold);
+        text-align: center;
+    }
+
+    .login-inputs {
+        .form-group {
+            margin-bottom: var(--space-none);
+        }
+        .formblock {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-base);
+        }
+    }
+
+    &-copyright {
+        bottom: var(--space-xl);
+        color: var(--bs-white);
+        left: 50%;
+        position: fixed;
+        transform: translateX(-50%);
+        width: max-content;
+        a {
+            color: var(--bs-primary-lightest);
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Small devices (576px and below) */
+@media (max-width: $screen-sm) {
+    .login-screen .login-form {
+        flex: 1;
+        margin: var(--space-none) var(--space-base);
+        min-width: auto;
+        padding: var(--space-base);
+    }
+
+    .login-screen-copyright {
+        bottom: var(--space-base);
+    }
+}

@@ -1,0 +1,129 @@
+// Bootstrap
+// no modal
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/modal';
+
+@include modal();
+
+//Customizations
+
+//
+// DISCLAIMER:
+// Do not change this file because it is core styling.
+// Customizing core files will make updating Atlas much more difficult in the future.
+// To customize any core styling, copy the part you want to customize to styles/web/sass/app/ so the core styling is overwritten.
+//
+
+/* ==========================================================================
+    Modal
+
+    Default Mendix modals. Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults
+========================================================================== */
+.modal-dialog {
+    .modal-content {
+        border: 1px solid var(--#{$prefix}border-color);
+        background-color: var(--#{$prefix}body-bg);
+        border-radius: var(--#{$prefix}border-radius);
+        box-shadow: var(--#{$prefix}box-shadow-sm);
+
+        .modal-header {
+            display:flex;
+            align-items: center;
+            padding: var(--space-base) var(--space-m);
+            background-color: var(--#{$prefix}secondary-bg);
+            border-bottom: 1px solid var(--#{$prefix}border-color);
+            flex-flow: row-reverse;
+            justify-content: space-between;
+
+            .close {
+                color: var(--#{$prefix}body-color); // it creates a problem in dark theme, 
+                //for now it has been resolved by coloring with black in dark theme
+                line-height: 1;
+                margin-top: var(--space-none);
+                &:focus {
+                    border-radius: var(--#{$prefix}border-radius);
+                    outline: var(--space-xxs) solid var(--#{$prefix}primary);
+                }
+            }
+
+            h4,
+            .h4 {
+                color: var(--#{$prefix}tertiary-color);
+                font-weight: $font-weight-bold; // no css var
+            }
+
+        }
+
+        ul>li {
+            background-color: var(--#{$prefix}secondary-bg);
+
+            &:hover {
+                --table-hover-bg: #{$table-hover-bg};
+                background-color: var(--table-hover-bg);
+            }
+
+        }
+
+        .modal-footer {
+            padding: var(--space-base);
+            background-color: var(--#{$prefix}secondary-bg);
+        }
+    }
+}
+
+.mx-window {
+    &.mx-window-view .mx-window-body {
+        // Dataview in popup
+        > .mx-dataview > .mx-dataview-content,
+        > .mx-placeholder > .mx-dataview > .mx-dataview-content {
+            padding: var(--space-base);
+        }
+        > .mx-dataview > .mx-dataview-controls,
+        > .mx-placeholder > .mx-dataview > .mx-dataview-controls {
+            padding: var(--space-base);
+            border-top: 1px solid var(--#{$prefix}modal-header-border-color);
+        }
+    }
+}
+
+.mx-dialog .modal-body {
+    padding: var(--space-m);
+    background-color: var(--#{$prefix}secondary-bg);
+}
+
+// Login modal
+.mx-login {
+    .modal-body {
+        padding: var(--space-none) var(--space-base);
+    }
+
+    .modal-content {
+        input {
+            height: 56px; // ?
+            padding: var(--space-s) var(--space-s);
+            border: 1px solid var(--#{$prefix}white);
+            background: var(--#{$prefix}white);
+            font-size: var(--font-size-base);
+
+            &:focus {
+                border-color: var(--#{$prefix}info-light);
+            }
+        }
+    }
+
+    button {
+        font-size: var(--font-size-base);
+    }
+
+    h4 {
+        color: var(--#{$prefix}gray-500);
+        font-size: var(--font-size-h5);
+        font-weight: $font-weight-bold; // no css var
+    }
+}
+
+
+
+
+

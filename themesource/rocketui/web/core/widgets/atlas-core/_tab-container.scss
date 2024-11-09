@@ -1,0 +1,220 @@
+// Bootstrap
+//no tab container
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/tab-container';
+@import '../../../../../atlas_core/web/core/helpers/tab-container';
+
+@include tab-container();
+@include tab-container-helpers();
+
+//Customizations
+
+.mx-tabcontainer {
+    --tabs-color: var(--#{$prefix}secondary-color);
+    --tabs-border-color: var(--#{$prefix}border-color);
+    --tabs-bg-hover: var(--#{$prefix}secondary-bg);
+    --tabs-bg: var(--#{$prefix}primary);
+    --tabs-lined-border-width: 2px;
+    --tabs-bg-pills: var(--#{$prefix}secondary-bg-subtle);
+    --tabs-bg-active: var(--#{$prefix}primary);
+    font-size: var(--font-size-s);
+
+    .mx-tabcontainer-tabs {
+        margin-bottom: var(--space-base);
+        border-color: var(--tabs-border-color);
+
+        &>li>a {
+            color: var(--tabs-color);
+            font-weight: $font-weight-normal;
+            border-radius: var(--#{$prefix}border-radius) var(--#{$prefix}border-radius) 0 0;
+
+            &:hover,
+            &:focus {
+                background-color: var(--tabs-bg-hover);
+            }
+        }
+
+        &>li.active>a,
+        &>li.active>a:hover,
+        &>li.active>a:focus {
+            border: 1px solid var(--tabs-border-color);
+            border-bottom-color: var(--#{$prefix}secondary-bg);
+            background-color: var(--tabs-bg-hover);
+            text-shadow: 0 0 0.5px currentColor;
+        }
+    }
+
+    .mx-tabcontainer-badge {
+        margin-left: var(--space-s);
+        border-radius: var(--font-size-s);
+        background-color: var(--#{$prefix}primary);
+        color: var(--#{$prefix}white);
+        font-size: var(--font-size-s);
+        font-weight: $font-weight-bold;
+        padding: calc(var(--space-s) / 2) var(--space-s);
+    }
+
+    .mx-tabcontainer-content.tab-content {
+        >.tab-pane {
+            display: none;
+        }
+
+        >.active {
+            display: block;
+        }
+    }
+
+
+    &.tab-pills {
+        &>.mx-tabcontainer-tabs {
+            --tabs-color: var(--#{$prefix}body-color);
+            
+            &>li {
+                margin-bottom: var(--space-s);
+            }
+
+            &>li>a {
+                margin-right: var(--space-s);
+                color: var(--tabs-color);
+                border-radius: var(--#{$prefix}border-radius);
+                background-color: var(--tabs-bg-pills);
+
+                &:hover,
+                &:focus {
+                    background-color: var(--tabs-bg-hover);
+                }
+            }
+
+            &>li.active>a,
+            &>li.active>a:hover,
+            &>li.active>a:focus {
+                color: var(--#{$prefix}white);
+                border-color: var(--tabs-bg-active);
+                background-color: var(--tabs-bg-active);
+            }
+        }
+    }
+
+    // Style with lines
+    &.tab-lined {
+        &>.mx-tabcontainer-tabs {
+
+            li {
+                margin-right: var(--space-l);
+
+                &>a {
+                    padding: var(--space-base) var(--space-s) calc(var(--space-s) - var(--tabs-lined-border-width)) var(--space-s);
+                    color: var(--tabs-color);
+                    border-bottom: var(--tabs-lined-border-width) solid transparent;
+
+                    &:hover,
+                    &:focus {
+                        color: var(--tabs-color);
+                    }
+                }
+
+                &.active>a,
+                &.active>a:hover,
+                &.active>a:focus {
+                    color: var(--#{$prefix}tertiary-color);
+                    border-bottom: var(--tabs-lined-border-width) solid var(--#{$prefix}primary);
+
+                }
+            }
+        }
+    }
+
+
+    // Bordered
+    &.tab-bordered {
+
+        &>.mx-tabcontainer-content {
+            padding: var(--space-s);
+            border-color: var(--tabs-border-color);
+        }
+    }
+
+    // Wizard
+    &.tab-wizard {
+        &>.mx-tabcontainer-tabs {
+            &::before {
+                top: var(--space-base);
+                background-color: var(--tabs-border-color);
+            }
+
+            &>li {
+                &>a {
+                    width: calc((var(--space-base) * 2) + 1px);
+                    height: calc((var(--space-base) * 2) + 1px);
+                    background-color: var(--#{$prefix}secondary-bg);
+                    color: var(--#{$prefix}primary);
+                    border: 1px solid var(--tabs-border-color);
+                    font-size: var(--font-size-base);
+                }
+
+                &.active {
+
+                    &>a,
+                    &>a:hover,
+                    &>a:focus {
+                        border-color: var(--tabs-bg-active);
+                        background-color: var(--tabs-bg-active);
+                        color: var(--#{$prefix}secondary-bg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Tab Styling Specific for mobile
+.tab-mobile.mx-tabcontainer {
+    &>.mx-tabcontainer-tabs {
+        background-color: var(--#{$prefix}primary);
+
+        li {
+            a {
+                padding: var(--space-base);
+                color: var(--#{$prefix}white);
+                font-size: var(--space-s);
+                font-weight: $font-weight-normal;
+
+            }
+
+            &.active>a,
+            &.active>a:hover,
+            &.active>a:focus {
+                color: var(--#{$prefix}white);
+                background-color: color-mix(in srgb, var(--#{$prefix}primary),var(--#{$prefix}black) 80%);
+            }
+        }
+    }
+}
+
+
+
+
+/* --------- Tabs Widget Override --------- */
+
+
+
+
+.nav-tabs {
+    border-bottom: 1px solid var(--tabs-border-color);
+
+    >li {
+        float: left;
+        margin-bottom: -1px;
+
+        >a {
+            margin-right: var(--space-xxs);
+            line-height: 1.42857143;
+            border: 1px solid transparent;
+
+            &:hover {
+                border-color: var(--#{$prefix}secondary-bg-subtle);
+            }
+        }
+    }
+}

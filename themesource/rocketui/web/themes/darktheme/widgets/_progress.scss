@@ -1,0 +1,59 @@
+@include color-mode(dark){
+    //PROGRESS CIRCLE
+    .widget-progress-circle-primary {
+        .widget-progress-circle-path {
+            stroke: color-mix(in srgb, #{var(--#{$prefix}primary)}, var(--#{$prefix}light) 20%);
+        }
+
+        .progressbar-text {
+            color: color-mix(in srgb, #{var(--#{$prefix}primary)}, var(--#{$prefix}light) 20%) !important;
+        }
+    }
+
+    .widget-progress-circle-success {
+        .widget-progress-circle-path {
+            stroke: var(--#{$prefix}success);
+        }
+
+        .progressbar-text {
+            color: var(--#{$prefix}success) !important;
+        }
+    }
+
+    .widget-progress-circle-warning {
+        .widget-progress-circle-path {
+            stroke: var(--#{$prefix}warning);
+        }
+
+        .progressbar-text {
+            color: var(--#{$prefix}warning) !important;
+        }
+    }
+
+    .widget-progress-circle-danger {
+        .widget-progress-circle-path {
+            stroke: var(--#{$prefix}danger);
+        }
+
+        .progressbar-text {
+            color: var(--#{$prefix}danger) !important;
+        }
+    }
+
+    //PROGRESS BARS
+    .widget-progress-bar.progress-bar-primary .progress-bar {
+        background-color: color-mix(in srgb, #{var(--#{$prefix}primary)}, var(--#{$prefix}light) 20%);
+    }
+
+    .widget-progress-bar.progress-bar-success .progress-bar {
+        background-color: var(--#{$prefix}success);
+    }
+
+    .widget-progress-bar.progress-bar-warning .progress-bar {
+        background-color: var(--#{$prefix}warning);
+    }
+
+    .widget-progress-bar.progress-bar-danger .progress-bar {
+        background-color: var(--#{$prefix}danger);
+    }
+}

@@ -1,0 +1,31 @@
+@include color-mode(dark){
+    .form-control {
+        color: var(--#{$prefix}light);
+        border-color: var(--#{$prefix}border-color);
+    }
+
+
+    .form-control[disabled],
+    .form-control[readonly],
+    fieldset[disabled] .form-control {
+        color: var(--#{$prefix}border-color);
+        background-color: var(--#{$prefix}tertiary-bg);
+    }
+
+    .has-focus input,
+    .has-focus textarea,
+    .has-focus select {
+        border-color: $form-input-border-focus-color;
+    }
+
+    .form-control:not([readonly]):focus {
+        background-color: var(--#{$prefix}secondary-bg);
+    }
+
+    .has-error .form-control {
+        border-color: #a94442;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    }
+
+}

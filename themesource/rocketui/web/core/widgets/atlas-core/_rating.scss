@@ -1,0 +1,106 @@
+// Bootstrap
+//no rating
+
+// Atlas
+// @import "../../../../../atlas_core/web/core/widgets/rating";
+// @import "../../../../../atlas_core/web/core/helpers/rating";
+
+// @include rating();
+// @include rating-helpers();
+
+//Customizations
+
+.widget-rating {
+    .rating-icon {
+        font-size: var(--font-size-h4);
+    }
+
+    .rating-icon-empty {
+        color: var(--#{$prefix}border-color);
+    }
+
+    .rating-icon-full {
+        color: var(--#{$prefix}primary);
+    }
+
+    .rating-item {
+        &:focus:not(:focus-visible) {
+
+            .rating-image,
+            .rating-icon {
+                outline: none;
+            }
+        }
+
+        &:focus-visible {
+
+            .rating-image,
+            .rating-icon {
+                outline: 1px solid var(--#{$prefix}primary);
+                ;
+            }
+        }
+    }
+
+    &.widget-rating-small {
+        .rating-icon {
+            font-size: var(--font-size-base);
+        }
+
+        .rating-image {
+            height: var(--font-size-base);
+        }
+    }
+
+    &.widget-rating-large {
+        .rating-icon {
+            font-size: var(--font-size-h1);
+        }
+
+        .rating-image {
+            height: var(--font-size-h1);
+        }
+    }
+
+}
+
+.widget-star-rating{
+    &-empty {
+        color: var(--#{$prefix}border-color);
+    }
+    
+    &-full-widget {
+        color: var(--#{$prefix}primary);
+    }
+    
+    &-full-default {
+        color: var(--#{$prefix}border-color);
+    }
+    
+    &-font-medium {
+        font-size: var(--font-size-h1);
+    }
+    &-full-primary {
+        color: var(--#{$prefix}primary);
+    }
+
+    &-full-success {
+        color: var(--#{$prefix}success);
+    }
+
+    &-full-info {
+        color: var(--#{$prefix}info);
+    }
+
+    &-full-warning {
+        color: var(--#{$prefix}warning);
+    }
+
+    &-full-danger {
+        color: var(--#{$prefix}danger);
+    }
+
+    &-full-inverse {
+        color: $brand-inverse;
+    }
+}

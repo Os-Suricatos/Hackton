@@ -1,0 +1,132 @@
+// Bootstrap
+
+
+// Atlas
+// @import '../../../../atlas_core/web/core/helpers/background'; //not imported since the whole file was updated
+
+// @include background-helpers();
+
+//Customizations
+
+// //Atlas file correct important to be more generalist
+// .background-main {
+//     background-color: $bg-color if($enable-important-utilities, !important, null);
+// }
+
+// //Brand variations
+
+// .background-primary.background-dark,
+// .background-primary-dark {
+//     background-color: var(--#{$prefix}primary-dark) if($enable-important-utilities, !important, null);
+// }
+
+// .background-primary.background-light,
+// .background-primary-light {
+//     background-color: var(--#{$prefix}primary-light) if($enable-important-utilities, !important, null);
+// }
+
+// //Semantic variations
+
+// .background-success-darker {
+//     background-color: var(--#{$prefix}success-darker) if($enable-important-utilities, !important, null);
+// }
+
+// .background-success.background-dark,
+// .background-success-dark {
+//     background-color: var(--#{$prefix}success-dark) if($enable-important-utilities, !important, null);
+// }
+
+// .background-success.background-light,
+// .background-success-light {
+//     background-color: var(--#{$prefix}success-light) if($enable-important-utilities, !important, null);
+// }
+
+// .background-success-lighter {
+//     background-color: var(--#{$prefix}success-lighter) if($enable-important-utilities, !important, null);
+// }
+
+// .background-warning-darker {
+//     background-color: var(--#{$prefix}warning-darker) if($enable-important-utilities, !important, null);
+// }
+
+// .background-warning.background-dark,
+// .background-warning-dark {
+//     background-color: var(--#{$prefix}warning-dark) if($enable-important-utilities, !important, null);
+// }
+
+// .background-warning.background-light,
+// .background-warning-light {
+//     background-color: var(--#{$prefix}warning-light) if($enable-important-utilities, !important, null);
+// }
+
+// .background-warning-lighter {
+//     background-color: var(--#{$prefix}warning-lighter) if($enable-important-utilities, !important, null);
+// }
+
+// .background-danger-darker {
+//     background-color: var(--#{$prefix}danger-darker) if($enable-important-utilities, !important, null);
+// }
+
+// .background-danger.background-dark,
+// .background-danger-dark {
+//     background-color: var(--#{$prefix}danger-dark) if($enable-important-utilities, !important, null);
+// }
+
+// .background-danger.background-light,
+// .background-danger-light {
+//     background-color: var(--#{$prefix}danger-light) if($enable-important-utilities, !important, null);
+// }
+
+// .background-danger-lighter {
+//     background-color: var(--#{$prefix}danger-lighter) if($enable-important-utilities, !important, null);
+// }
+
+// //Bootstrap variations
+
+// .background-default-darker {
+//     background-color: var(--#{$prefix}default-darker) if($enable-important-utilities, !important, null);
+// }
+
+// .background-default-dark {
+//     background-color: var(--#{$prefix}default-dark) if($enable-important-utilities, !important, null);
+// }
+
+// .background-default-light {
+//     background-color: var(--#{$prefix}default-light) if($enable-important-utilities, !important, null);
+// }
+
+// .background-default-lighter {
+//     background-color: var(--#{$prefix}default-lighter) if($enable-important-utilities, !important, null);
+// }
+
+// .background-inverse-darker {
+//     background-color: var(--#{$prefix}inverse-darker) if($enable-important-utilities, !important, null);
+// }
+
+// .background-inverse-dark {
+//     background-color: var(--#{$prefix}inverse-dark) if($enable-important-utilities, !important, null);
+// }
+
+// .background-inverse-light {
+//     background-color: var(--#{$prefix}inverse-light) if($enable-important-utilities, !important, null);
+// }
+
+// .background-inverse-lighter {
+//     background-color: var(--#{$prefix}inverse-lighter) if($enable-important-utilities, !important, null);
+// }
+
+// .background-info-darker {
+//     background-color: var(--#{$prefix}info-darker) if($enable-important-utilities, !important, null);
+// }
+
+// .background-info-dark {
+//     background-color: var(--#{$prefix}info-dark) if($enable-important-utilities, !important, null);
+// }
+
+// .background-info-light {
+//     background-color: var(--#{$prefix}info-light) if($enable-important-utilities, !important, null);
+// }
+
+// .background-info-lighter {
+//     background-color: var(--#{$prefix}info-lighter) if($enable-important-utilities, !important, null);
+// }

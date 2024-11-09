@@ -1,0 +1,68 @@
+@include color-mode(dark) {
+    .wizard-arrow .wizard-step {
+        border: 1px solid var(--#{$prefix}border-color);
+        background-color: var(--#{$prefix}secondary-bg);
+
+        &::after {
+            border-left-color: var(--#{$prefix}secondary-bg);
+        }
+
+        &::before {
+            top: -1px;
+            // border-width: $wizard-step-height / 2;
+            border-left-color: var(--#{$prefix}border-color);
+        }
+    }
+
+    .wizard-arrow .wizard-step-active {
+        background-color: var(--#{$prefix}primary);
+
+        .wizard-step-text {
+            color: var(--#{$prefix}primary-darker);
+        }
+
+        &::after {
+            border-left-color: var(--#{$prefix}primary);
+        }
+    }
+
+    .wizard-arrow .wizard-step-visited {
+        .wizard-step-text {
+            color: var(--#{$prefix}primary-light);
+        }
+    }
+    
+    .wizard {
+        --wizard-active-color: var(--#{$prefix}primary-darker);
+        --wizard-visited-color: var(--#{$prefix}primary-dark);
+        --wizard-visited-step-color: var(--#{$prefix}gray-600);
+        --wizard-default-step-color: var(--#{$prefix}gray-400);
+
+        &-step {
+
+            //Wizard step number
+            &-number {
+                color: var(--wizard-default-step-color);
+            }
+
+            //Wizard step text
+            &-text {
+                color: var(--wizard-default-step-color);
+            }
+        }
+
+        &-circle {
+            .wizard-step-visited {
+                .wizard-step-text {
+                    color: var(--wizard-visited-step-color);
+                }
+            }
+
+            .wizard-step-active {
+                .wizard-step-number {
+                    color: var(--wizard-active-color);
+                }
+            }
+        }
+    }
+}

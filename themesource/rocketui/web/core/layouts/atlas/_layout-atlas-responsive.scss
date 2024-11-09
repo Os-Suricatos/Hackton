@@ -1,0 +1,134 @@
+//Atlas
+@import '../../../../../atlas_core/web/layouts/layout-atlas-responsive';
+@include layout-atlas-responsive();
+
+
+
+.layout-atlas-responsive,
+.layout-atlas-responsive-default {
+    @media (min-width: $screen-md) {
+        .mx-scrollcontainer-shrink:not(.mx-scrollcontainer-open) > .region-sidebar,
+        .mx-scrollcontainer-push:not(.mx-scrollcontainer-open) > .region-sidebar,
+        .mx-scrollcontainer-slide:not(.mx-scrollcontainer-open) > .region-sidebar {
+            --closed-sidebar-width: var(--sidebar-close-width);
+            .mx-scrollcontainer-wrapper .mx-navigationtree ul li {
+                &.mx-navigationtree-has-items:hover > ul {
+                    background-color: var(--sidebar-bg);
+                    border-bottom-left-radius: 0;
+                    border-top-left-radius: 0;
+                    left: var(--sidebar-icon-width, var(--closed-sidebar-width));
+                    min-width: calc(var(--sidebar-size) - var(--closed-sidebar-width) - var(--space-base));
+                    padding: var(--space-base) var(--space-s);
+                    top: var(--topbar-min-height);
+
+                    & > li.mx-navigationtree-has-items:hover > ul {
+                        left: 100%;
+                    }
+
+                    li a {
+                        padding-left: var(--space-base);
+                    }
+                }
+            }
+        }
+
+        .widget-sidebar:not(.widget-sidebar-expanded) {
+            .mx-navigationtree ul li {
+                &.mx-navigationtree-has-items:hover {
+                    ul {
+                        left: var(--sidebar-icon-width);
+                        padding: var(--space-s) 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // Sidebar
+    .region-sidebar {
+        // background-color: var(--sidebar-bg);
+        .toggle-btn {
+            width: var(--sidebar-icon-width);
+        }
+
+        .mx-scrollcontainer-wrapper {
+            .toggle-btn-wrapper {
+                min-height: calc(var(--topbar-min-height) + 4px);
+                padding: var(--space-s);
+                // background: $navsidebar-sub-bg;
+            }
+
+            .toggle-btn {
+                padding: var(--space-base);
+            }
+
+            .toggle-text {
+                color: var(--#{$prefix}white);
+                font-weight: var(--font-weight-bold);
+            }
+        }
+    }
+
+    // Topbar
+    .region-topbar {
+        padding: 0 var(--space-s);
+
+
+        .mx-icon-filled,
+        .mx-icon-lined {
+            font-size: var(--font-size-m);
+        }
+    }
+}
+
+// Topbar variant
+.layout-atlas-responsive-topbar {
+    .region-sidebar {
+        box-shadow: var(--#{$prefix}box-shadow-lg);
+    }
+
+    .region-topbar {
+        padding: 0 var(--layout-spacing-right) 0 var(--layout-spacing-left);
+    }
+}
+
+
+.layout-atlas-responsive{
+    &,
+    &-default,
+    &-topbar{
+        .region-sidebar{
+            .mx-scrollcontainer-wrapper {
+                .mx-navigationtree .navbar-inner > ul > li {
+                    & > a {
+                        border-radius: var(--bs-border-radius);
+                        height: var(--sidebar-icon-height);
+                        margin-bottom: var(--space-s);
+                        padding: 0;
+
+                        // Glyph icon
+                        .glyphicon,
+                        .mx-icon-lined,
+                        .mx-icon-filled {
+                            align-items: center;
+                            border-radius:  var(--bs-border-radius);
+                            display: flex;
+                            height: var(--sidebar-icon-height);
+                            justify-content: center;
+                            padding: var(--space-s) var(--space-base);
+                            width: var(--sidebar-icon-width);
+                        }
+                    }
+                }
+            }
+        }
+
+        .region-topbar{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+            .toggle-btn {
+                color: var(--#{$prefix}primary);
+            }
+        }
+    }
+}

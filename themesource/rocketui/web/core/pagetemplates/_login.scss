@@ -1,0 +1,6 @@
+//Default Mendix Login page '.../login.html' 
+@import '../../../../atlas_core/web/core/base/login';
+@include login();
+//Page Template
+@import '../../../../atlas_web_content/web/pagetemplates/login';
+

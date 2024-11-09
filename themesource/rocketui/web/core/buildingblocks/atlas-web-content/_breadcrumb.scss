@@ -1,0 +1,50 @@
+// Bootstrap
+@import '../../bootstrap/scss/breadcrumb';
+
+// Atlas
+//@import "../../../../atlas_web_content/web/buildingblocks/breadcrumb";
+
+/* ==========================================================================
+   Breadcrumbs
+
+========================================================================== */
+.breadcrumb {
+    --#{$prefix}breadcrumb-padding-x: var(--space-s);
+    --#{$prefix}breadcrumb-padding-y: 0;
+    --#{$prefix}breadcrumb-margin-bottom: var(--space-l);
+    --#{$prefix}breadcrumb-font-size: var(--font-size-base);
+    --#{$prefix}breadcrumb-divider-color: var(--#{$prefix}gray-400);
+    --#{$prefix}breadcrumb-item-padding-x: var(--space-s);
+    --#{$prefix}breadcrumb-border-radius: 0;
+    --#{$prefix}breadcrumb-bg: transparent;
+
+    //== Elements
+    //-------------------------------------------------------------------------------------------------------------------//
+    &-item {
+        &:last-child {
+            color: var(--#{$prefix}secondary-color);
+        }
+
+        &+.breadcrumb-item {
+            padding-left: 0;
+
+            &::before {
+                padding-right: var(--space-s);
+                padding-left: var(--space-s);
+                color: var(--#{$prefix}gray-400);
+                content: ">"
+            }
+        }
+    }
+
+    //== Variations
+    //-------------------------------------------------------------------------------------------------------------------//
+    &-large {
+        font-size: var(--font-size-h3);
+    }
+
+    &-underline {
+        padding-bottom: var(--space-base);
+        border-bottom: 1px solid var(--#{$prefix}border-color);
+    }
+}

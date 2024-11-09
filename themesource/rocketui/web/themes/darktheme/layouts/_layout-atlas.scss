@@ -1,0 +1,15 @@
+[data-#{$prefix}theme=dark] {
+
+    .layout-atlas-responsive,
+    .layout-atlas-responsive-default {
+
+        .mx-scrollcontainer-center.region-content {
+            background-color: var(--#{$prefix}gray-900);
+        }
+    }
+
+    .navbar-brand .widget-language-selector .current-language-text .arrow-image,
+    .navbar-brand .widget-language-selector .language-arrow .arrow-image {
+        filter: invert(1);
+    }
+}

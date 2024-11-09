@@ -1,0 +1,77 @@
+// Bootstrap
+//no chat
+
+// Atlas
+@import "../../../../../atlas_web_content/web/buildingblocks/chat";
+
+//Customizations
+
+/* ==========================================================================
+   Chats
+
+========================================================================== */
+.chat {
+    background-color: var(--#{$prefix}secondary-bg);
+
+    &-content {
+        .chat-list {
+            ul {
+                margin-bottom: var(--space-base);
+            }
+
+            li {
+                padding: var(--space-base) var(--space-l);
+            }
+
+            .mx-listview-loadMore {
+                margin: var(--space-base) auto;
+                color: var(--#{$prefix}secondary-bg);
+                background-color: var(--#{$prefix}primary);
+                box-shadow: var(--#{$prefix}box-shadow-sm);
+            }
+        }
+    }
+    &-avatar {
+        margin: 0 var(--space-m) 0 0;
+        border-radius: 50%;
+    }
+    &-message-balloon {
+        padding: var(--space-s) var(--space-base);
+        border-radius: var(--space-xs);
+        background-color: var(--#{$prefix}body-bg);
+    
+        &::after {
+            top: var(--space-s);
+            border: var(--space-s) solid transparent;
+            border-right-color: var(--#{$prefix}body-bg);
+        }
+    }
+    &-message-time {
+        padding-top: var(--space-xxs);
+    }
+
+    &-footer {
+        padding: var(--space-m);
+        background-color: var(--#{$prefix}body-bg);
+        box-shadow: var(--#{$prefix}box-shadow-sm);
+    }
+    &-input {
+        .chat-textbox {
+            margin-right: var(--space-m);
+        }
+    }
+    &-message-self {
+        .chat-avatar {
+            margin: 0 0 0 var(--space-m);
+        }
+    
+        .chat-message-balloon {
+            background-color: var(--#{$prefix}primary-light);
+    
+            &::after {
+                border: var(--space-s) solid transparent;
+                border-left-color: var(--#{$prefix}primary-light);
+            }
+        }
+    }
+}

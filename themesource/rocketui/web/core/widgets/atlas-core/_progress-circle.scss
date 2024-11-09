@@ -1,0 +1,59 @@
+// Bootstrap
+//no progress-circle
+
+// Atlas
+@import '../../../../../atlas_core/web/core/widgets/progress-circle';
+@import '../../../../../atlas_core/web/core/helpers/progress-circle';
+
+@include progress-circle();
+@include progress-circle-helpers();
+
+//Customizations
+
+/* --------- Progress Circle Overrides --------- */
+
+.widget-progress-circle-trail-path {
+    stroke: var(--#{$prefix}tertiary-bg);
+}
+
+//== Progress circle and label colors
+.widget-progress-circle-primary {
+    .widget-progress-circle-path {
+        stroke: var(--#{$prefix}primary);
+    }
+
+    .progressbar-text {
+        color: var(--#{$prefix}primary) !important;
+    }
+}
+
+.widget-progress-circle-success {
+    .widget-progress-circle-path {
+        stroke: var(--#{$prefix}success);
+    }
+
+    .progressbar-text {
+        color: var(--#{$prefix}success) !important;
+    }
+}
+
+.widget-progress-circle-warning {
+    .widget-progress-circle-path {
+        stroke: var(--#{$prefix}warning);
+    }
+
+    .progressbar-text {
+        color: var(--#{$prefix}warning) !important;
+    }
+}
+
+.widget-progress-circle-danger {
+    .widget-progress-circle-path {
+        stroke: var(--#{$prefix}danger);
+    }
+
+    .progressbar-text {
+        color: var(--#{$prefix}danger) !important;
+    }
+}
+

@@ -1,0 +1,32 @@
+
+
+[data-bs-theme=dark] {
+
+    color-scheme: dark;
+    --#{$prefix}primary: #{$color-primary-lighter};
+    // --form-label-color: var(--#{$prefix}light);
+    --form-input-placeholder-color: var(--#{$prefix}dark);
+    --input-focus-color: var(--#{$prefix}dark);
+
+    --#{$prefix}secondary-bg: #1f1f1f;
+    --#{$prefix}tertiary-color: var(--#{$prefix}light);
+
+    //Need reviewing
+    --tabs-border-color: #{$color-primary-light};
+    --tabs-border-color: #fff;
+
+    --sidebar-bg: #212121;
+    --sidebar-bg-hover: rgba(255, 255, 255, 0.05);
+    --sidebar-color: var(--#{$prefix}tertiary-color);
+    --sidebar-color-active: var(--#{$prefix}primary);
+
+    --topbar-bg: #212121;
+    --topbar-color: var(--#{$prefix}tertiary-color);
+    --topbar-bg-hover: rgba(255, 255, 255, 0.05);
+    --topbar-color-active: var(--#{$prefix}primary);
+
+    .layout-atlas .region-topbar .mx-navbar{
+        --navbar-dropdown-border-color: rgba(255, 255, 255, 0.15);
+        --navbar-subitems-hover-bg: rgba(255, 255, 255, 0.05);
+    }
+}

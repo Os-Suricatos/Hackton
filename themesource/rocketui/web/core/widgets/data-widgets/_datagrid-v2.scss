@@ -1,0 +1,257 @@
+// Bootstrap
+// no datagrid v2
+
+// Atlas
+@import '../../../../../datawidgets/web/datagrid';
+@import '../../../../../datawidgets/web/datagrid-design-properties';
+
+//Customizations
+.table {
+    background-color: var(--#{$prefix}secondary-bg);
+    border-radius: var(--#{$prefix}border-radius-lg);
+
+
+    /* Column Header */
+    .th {
+        font-weight: var(--font-semi-bold);
+        background-color: var(--#{$prefix}secondary-bg);
+        border-color: var(--#{$prefix}border-color);
+        padding: var(--space-base);
+
+        /* Column resizer when column is resizable */
+        .column-resizer {
+            padding: 0 var(--space-xs);
+
+            &:hover .column-resizer-bar {
+                background-color: var(--#{$prefix}primary);
+            }
+            &:active .column-resizer-bar {
+                background-color: var(--#{$prefix}primary);
+            }
+        }
+
+        /* Content of the column header */
+        .column-container {
+            padding-left: var(--space-xs);
+            margin-left: -var(--space-xs);
+            /* Styles while dragging another column */
+            &.dragging {
+                border-left: var(--space-xs) solid $dragging-color-effect;
+            }
+        }
+
+        /* Header text */
+        .column-header {
+            margin: var(--space-xxs) var(--space-xxs) var(--space-xxs) calc(-1 * var(--space-xs) + 1px);
+
+            &:focus-visible {
+                outline: 1px solid var(--#{$prefix}primary);
+            }
+        }
+
+        /* Header filter */
+        .filter {
+            margin-top: var(--space-xs);
+            input:not([type="checkbox"]) {
+                font-weight: normal;
+            }
+        }
+    }
+
+    /* If Column Header has filter */
+    &:has(.th .column-container .filter:not(:empty)) {
+        .th {
+            &.column-selector {
+                padding: var(--space-base) 0;
+            }
+            /*adjust filter-selector icon to be mid-bottom aligned */
+            .column-selector-content {
+                margin-bottom: var(--space-xs);
+            }
+
+            /*adjust checkbox toggle to be mid-bottom aligned */
+            &.widget-datagrid-col-select {
+                padding-bottom: calc(var(--space-base) + 11px);
+            }
+        }
+    }
+
+    .tr:first-child{
+        .th:first-of-type{
+            border-top-left-radius: 0;
+        }
+        .th:last-of-type{
+            border-top-right-radius: 0;
+        }
+
+    } 
+
+    .tr:last-child .td {
+        &:first-of-type{
+            border-bottom-left-radius: 0;
+        }
+
+        &:last-of-type{
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    &-bordered-all {
+        .tr:first-child .th {
+            &:first-of-type{
+                border-top-left-radius: var(--#{$prefix}border-radius-lg);
+            }
+
+            &:last-of-type{
+                border-top-right-radius: var(--#{$prefix}border-radius-lg);
+            }
+        }
+        .tr:last-child .td {
+            &:first-of-type{
+                border-bottom-left-radius: var(--#{$prefix}border-radius-lg);
+            }
+
+            &:last-of-type{
+                border-bottom-right-radius: var(--#{$prefix}border-radius-lg);
+            }
+        }
+    }
+
+    
+    &-striped {
+        .tr:nth-child(odd)>.td {
+            background-color: var(--#{$prefix}table-striped-bg);
+        }
+    }
+
+    &-hover {
+        .tr:hover>.td {
+            background-color: var(--#{$prefix}table-hover-bg);
+        }
+    }
+
+    /* Column selector for hidable columns */
+    .column-selector {
+
+        /* Column content */
+        .column-selector-content {
+            padding-right: var(--space-base);
+
+            /* List of columns to select */
+            .column-selectors {
+                margin: var(--space-s);
+                padding: 0 var(--space-base);
+                background: var(--#{$prefix}secondary-bg);
+                border-radius: var(--#{$prefix}border-radius-sm);
+
+                li {
+                    label {
+                        margin: var(--space-s);
+                        font-weight: var(--font-regular);
+                    }
+                }
+            }
+        }
+    }
+
+    /* Column content */
+    .td {
+        padding: var(--space-base);
+        border-color: var(--#{$prefix}border-color);
+
+        &:focus {
+            outline-color: var(--#{$prefix}primary);
+        }
+    }
+
+    > :not(caption)>*>* {
+        background-color: var(--#{$prefix}secondary-bg);
+    }
+}
+
+.table-compact {
+    .th {
+        padding: var(--space-s);
+
+        .filter-selectors {
+            margin: 0 var(--space-s);
+        }
+    }
+
+    &:has(.th .column-container .filter:not(:empty)) {
+        .th {
+            &.column-selector {
+                padding: var(--space-s) 0;
+            }
+            &.widget-datagrid-col-select {
+                padding-bottom: calc(var(--space-s) + 11px);
+            }
+        }
+    }
+
+    .td {
+        padding: var(--space-s);
+    }
+
+    .dropdown-container .dropdown-list {
+        margin: 0 var(--space-s);
+    }
+
+    .column-selector {
+        /* Column content */
+        .column-selector-content {
+            padding-right: var(--space-s);
+        }
+    }
+}
+
+.pagination-bar {
+    margin: var(--space-base);
+    color: var(--#{$prefix}body-color);
+
+    .paging-status {
+        padding: 0 var(--space-s) var(--space-s);
+    }
+
+    .pagination-button {
+        padding: 6px;
+        color: $pagination-button-color;
+
+        &:hover {
+            color: var(--#{$prefix}primary);
+        }
+
+        &:focus-visible {
+            outline: 1px solid var(--#{$prefix}primary);
+        }
+    }
+
+    .pagination-icon {
+        top: 0;
+    }   
+}
+
+/* Column selector for hidable columns outside DG context */
+/* List of columns to select */
+.column-selectors {
+    margin: var(--space-s) 0;
+    padding: 0 var(--space-base);
+    border-radius: var(--#{$prefix}border-radius-sm);
+    background-color: var(--#{$prefix}secondary-bg);
+    border: 1px solid var(--#{$prefix}border-color);
+
+    li {
+        label {
+            margin: var(--space-s);
+            font-weight: var(--font-regular);
+        }
+    }
+}
+
+.widget-datagrid {
+    &.widget-datagrid-selection-method-click {
+        .tr.tr-selected .td {
+            background-color: var(--#{$prefix}primary-light);
+        }
+    }
+}

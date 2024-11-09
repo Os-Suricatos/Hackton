@@ -1,0 +1,118 @@
+// Bootstrap
+//no badge-button in bootstrap
+
+// Atlas
+// @import '../../../../../atlas_core/web/core/widgets/badge-button';
+// @import '../../../../../atlas_core/web/core/helpers/badge-button';
+//
+//@include badge-button();
+//@include badge-button-helpers();
+
+//Customizations
+.widget-badge-button {
+    --badge-button-color: var(--#{$prefix}primary);
+    --badge-button-bg: var(--#{$prefix}white);
+
+    .badge {
+        align-items: center;
+        background-color: var(--badge-button-bg);
+        color: var(--badge-button-color);
+        display: inline-flex;
+        font-size: var(--font-size-s);
+        line-height: 1;
+        margin: 0;
+        padding: var(--space-xs) var(--space-s);
+        text-align: center;
+        top: unset;
+        vertical-align: baseline;
+        white-space: nowrap;
+    }
+
+    &.btn-secondary,
+    &.btn-default {
+        .badge {
+            --badge-button-bg: var(--#{$prefix}primary);
+            --badge-button-color: var(--#{$prefix}white);
+        }
+    }
+
+    &.btn-success {
+        .badge {
+            --badge-button-color: var(--#{$prefix}success);
+        }
+    }
+
+    &.btn-warning {
+        .badge {
+            --badge-button-color: var(--#{$prefix}warning);
+        }
+    }
+
+    &.btn-danger {
+        .badge {
+            --badge-button-color: var(--#{$prefix}danger);
+        }
+    }
+
+    //Badge button bordered variation
+
+    &.btn-bordered.btn-primary {
+        .badge {
+            --badge-button-bg: var(--#{$prefix}primary);
+            --badge-button-color: var(--#{$prefix}white);
+        }
+
+        &:hover,
+        &:focus {
+            .badge {
+                --badge-button-bg: var(--#{$prefix}gray-300);
+                --badge-button-color: var(--#{$prefix}primary);
+            }
+        }
+    }
+
+    &.btn-bordered.btn-success {
+        .badge {
+            --badge-button-bg: var(--#{$prefix}success);
+            --badge-button-color: var(--#{$prefix}gray-300);
+        }
+
+        &:hover,
+        &:focus {
+            .badge {
+                --badge-button-bg: var(--#{$prefix}gray-300);
+                --badge-button-color: var(--#{$prefix}success);
+            }
+        }
+    }
+
+    &.btn-bordered.btn-warning {
+        .badge {
+            --badge-button-bg: var(--#{$prefix}warning);
+            --badge-button-color: var(--#{$prefix}gray-300);
+        }
+
+        &:hover,
+        &:focus {
+            .badge {
+                --badge-button-bg: var(--#{$prefix}gray-300);
+                --badge-button-color: var(--#{$prefix}warning);
+            }
+        }
+    }
+
+    &.btn-bordered.btn-danger {
+        .badge {
+            background: var(--#{$prefix}danger);
+            --badge-button-color: var(--#{$prefix}gray-300);
+        }
+
+        &:hover,
+        &:focus {
+            .badge {
+                background-color:var(--#{$prefix}gray-300);
+                --badge-button-color: var(--#{$prefix}danger);
+            }
+        }
+    }
+}

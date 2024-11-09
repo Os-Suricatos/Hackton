@@ -1,0 +1,149 @@
+// Bootstrap
+//no wizard
+
+// Atlas
+@import "../../../../../atlas_web_content/web/buildingblocks/wizard";
+
+//Customizations
+
+//Wizard
+.wizard {
+    --wizard-step-height: 32px;
+    --wizard-step-number-size: 32px;
+    --wizard-step-number-font-size: var(--font-size-s);
+    --wizard-default-bg: var(--#{$prefix}secondary-bg);
+    --wizard-default-color: var(--#{$prefix}secondary-bg);
+    --wizard-default-step-color: var(--#{$prefix}gray-800);
+    --wizard-default-border-color: var(--#{$prefix}border-color);
+
+    --wizard-active-bg: var(--#{$prefix}primary-lightest);
+    --wizard-active-color: var(--#{$prefix}primary);
+    --wizard-active-step-color: var(--#{$prefix}tertiary-color);
+    --wizard-active-border-color: var(--#{$prefix}primary);
+
+    --wizard-visited-bg: var(--#{$prefix}primary);
+    --wizard-visited-color: var(--#{$prefix}secondary-bg);
+    --wizard-visited-step-color: var(--#{$prefix}gray-600);
+    --wizard-visited-step-bg: var(--#{$prefix}primary);
+    --wizard-visited-border-color: var(--#{$prefix}primary);
+
+    margin-bottom: var(--space-m);
+
+    &-step {
+
+        //Wizard step number
+        &-number {
+            min-height: var(--wizard-step-number-size);
+            width: var(--wizard-step-number-size);
+            height: var(--wizard-step-number-size);
+            color: var(--wizard-default-step-color);
+            font-size: var(--wizard-step-number-font-size);
+            background-color: var(--wizard-default-bg);
+            border-color: var(--wizard-default-border-color);
+
+        }
+
+        //Wizard step text
+        &-text {
+            color: var(--wizard-default-step-color);
+        }
+    }
+
+    //Wizard circle
+    &-circle {
+        .wizard-step {
+            &::before {
+                // left: 155px;
+                top: calc(var(--wizard-step-number-size) / 2);
+                background-color: var(--wizard-default-border-color);
+            }
+
+            &.wizard-step-visited {
+                &::before {
+                    background-color: var(--wizard-visited-step-bg);
+                }
+            }
+        }
+
+        //Wizard states
+        .wizard-step-active {
+            .wizard-step-number {
+                color: var(--wizard-active-color);
+                border-color: var(--wizard-active-border-color);
+                background-color: var(--wizard-active-bg);
+            }
+
+            .wizard-step-text {
+                color: var(--wizard-active-step-color);
+            }
+        }
+
+        .wizard-step-visited {
+            .wizard-step-number {
+                color: var(--wizard-visited-color);
+                border-color: var(--wizard-visited-border-color);
+                background-color: var(--wizard-visited-bg);
+            }
+
+            .wizard-step-text {
+                color: var(--wizard-visited-step-color);
+            }
+        }
+    }
+
+    //Wizard arrow
+    &-arrow {
+        .wizard-step {
+            height: var(--wizard-step-height);
+            margin-left: calc(-1 * var(--wizard-step-height) / 2);
+            padding-left: calc(var(--wizard-step-height) / 2);
+            background-color: var(--wizard-default-bg);
+            border: 1px solid var(--wizard-default-border-color);
+
+            &::before,
+            &::after {
+                margin-left: calc(0px - calc(calc(var(--wizard-step-height) / 2) - 1px));
+            }
+
+            &::after {
+                border-width: calc(calc(var(--wizard-step-height) / 2) - 1px);
+                border-left-color: var(--wizard-default-bg);
+            }
+
+            &::before {
+                border-width: calc(var(--wizard-step-height) / 2);
+                border-left-color: var(--wizard-default-border-color);
+            }
+
+            &:first-child {
+                border-top-left-radius: var(--#{$prefix}border-radius-sm);
+                border-bottom-left-radius: var(--#{$prefix}border-radius-sm);
+            }
+
+            &:last-child {
+                border-top-right-radius: var(--#{$prefix}border-radius-sm);
+                border-bottom-right-radius: var(--#{$prefix}border-radius-sm);
+
+            }
+        }
+
+        //Wizard states
+        .wizard-step-active {
+            background-color: var(--wizard-active-bg);
+
+            .wizard-step-text {
+                color: var(--wizard-active-color);
+            }
+
+            &::after {
+                border-left-color: var(--wizard-active-bg);
+            }
+        }
+
+        .wizard-step-visited {
+            .wizard-step-text {
+                color: var(--#{$prefix}link-color);
+            }
+        }
+    }
+}

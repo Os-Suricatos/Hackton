@@ -1,0 +1,69 @@
+@include color-mode(dark){
+    .listview-stylingless.mx-listview > ul > li {
+        padding: unset;
+        cursor: default;
+        border: unset;
+        background-color: transparent;
+        }
+        .mx-listview {
+            &>ul {
+                &>li {
+    
+                    &:first-child {
+                    }
+                    &:last-child {
+                    }
+                }
+            }
+    
+        }
+    
+        // List items lined
+        .listview-lined.mx-listview {
+            &>ul>li {
+                border-top: 1px solid var(--#{$prefix}border-color);
+    
+                &:first-child {
+                    border-top: 1px solid var(--#{$prefix}border-color);
+                }
+    
+                &:last-child {
+                    border-bottom: 1px solid var(--#{$prefix}border-color);
+                }
+            }
+        }
+    
+        //List items Bordered
+        .listview-bordered.mx-listview {
+            &>ul>li {
+                border-color: var(--#{$prefix}border-color);
+    
+                &:first-child {
+                    border-top: 1px solid var(--#{$prefix}border-color);
+                        border-top-left-radius: var(--#{$prefix}border-radius);
+                        border-top-right-radius: var(--#{$prefix}border-radius);
+                }
+                
+                &:last-child {
+                    border-bottom-left-radius: var(--#{$prefix}border-radius);
+                    border-bottom-right-radius: var(--#{$prefix}border-radius);
+                }
+            }
+        }
+    
+        // List items striped
+        .listview-striped.mx-listview {
+            --table-striped-bg: #{$table-striped-bg};
+    
+            &>ul>li:nth-child(2n + 1) {
+                background-color: var(--table-striped-bg);
+            }
+        }
+    
+        // Items as seperated blocks
+        .listview-seperated.mx-listview {
+            &>ul>li {
+                border: 1px solid var(--#{$prefix}border-color);
+            }
+        }
+}
